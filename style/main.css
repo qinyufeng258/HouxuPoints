@@ -1,0 +1,49 @@
+.vip-card{
+	width: 80%;
+	position: absolute;
+	top:10px;
+	left: 10%;
+	height: 25%;
+	margin: 0 auto;
+	border-radius: 10px;
+	background: url(../images/vipcard.png) no-repeat;
+	background-size:100% 100%;
+
+}
+.vip-title{
+	text-align: center;
+	padding-top: 10px;
+	color:#E6E6E6;
+}
+.vip-left{
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	color: #e6e6e6;
+}
+.vip-right{
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	color: #e6e6e6;
+}
+.up-background{
+	background-color: #333333;
+	height: 120px;
+}
+#points-add::before{
+	border-top: 0px;
+}
+.middle-background{
+	padding-top: 15%;
+	background-color: #fff;
+	
+}
+.middle-background a{
+	padding: 15px 15px;
+}
+.down-background{
+	margin-top: 40px;
+	background-color: #fff;
+
+}
