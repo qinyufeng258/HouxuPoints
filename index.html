@@ -22,7 +22,7 @@
 
 </head>
 <body>
-	<div data-role="page" id="pageone">
+	<div data-role="page" id="myinfo">
 	  	<div class="up-background">
 	  		<div class="vip-card">
 				<div class="vip-title">逅续会员积分卡</div>
@@ -40,7 +40,7 @@
 
 	  	<div class="middle-background">
 	  		<div class="weui_cells weui_cells_access " id="points-add"> 
-			    <a class="weui_cell" href="#">
+			    <a class="weui_cell" href="#mypoint" data-transition="slidefade">
 			        <div class="weui_cell_hd">
 			            <img src="images/shop.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
 			        </div>
@@ -91,6 +91,48 @@
 	  	</div>	
 	</div>
 
+	<div data-role="page" id="mypoint" >
+		<div class="weui_cells_title">积分充值</div>
+		<div class="weui_cells">
+		    <div class="weui_cell">
+		        <div class="weui_cell_bd weui_cell_primary">
+		            <p>会员卡号</p>
+		        </div>
+		        <div class="weui_cell_ft">
+		            608080091
+		        </div>
+		    </div>
+		</div>
+
+		<div class="weui_cells weui_cells_form" >
+	        <div class="weui_cell">
+	            <div class="weui_cell_hd" ><label class="weui_label" >积分卡号</label></div>
+	            <div class="weui_cell_bd weui_cell_primary">
+	                <input data-role='none' class="weui_input" type="text" placeholder="请输入积分卡号"/>
+	            </div>
+	        </div>	
+	        <div class="weui_cell">
+	            <div class="weui_cell_hd"><label class="weui_label">积分密码</label></div>
+	            <div class="weui_cell_bd weui_cell_primary">
+	                <input data-role='none' class="weui_input" type="password" placeholder="请输入积分密码"/>
+	            </div>
+	        </div>
+			
+	        
+   		 </div>
+
+   		 <a href="#myinfo"  data-transition="slidefade"  data-direction="reverse" class="weui_btn weui_btn_plain_primary" id="point-pay-btn">支付</a>
+
+   		 <div class="point-pay-info">
+   		 	<p>积分卡充值说明：</p>
+   		 	<p>
+   		 		1.积分卡卡号为16位数字组成，密码为16位字母和数字混合组成。获得积分卡时请确认密码区涂层是否完整；
+   		 	</p>
+   		 	<p>
+   		 		2.电脑登录逅续科技官方网站（www.whuahuw.com）可以查询积分卡状态信息，积分卡状态分为未激活，已激活，已使用三种状态。
+   		 	</p>
+   		 </div>
+	</div>
 	
 </body>
 </html>

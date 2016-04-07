@@ -30,6 +30,7 @@
 .up-background{
 	background-color: #333333;
 	height: 120px;
+	font-size: 12px;
 }
 #points-add::before{
 	border-top: 0px;
@@ -46,4 +47,25 @@
 	margin-top: 40px;
 	background-color: #fff;
 
+}
+
+
+
+#point-pay-btn{
+	margin-top: 20px;
+	width: 50%;
+
+}
+#mypoint{
+	padding-top: 20px;
+}
+.point-pay-info{
+
+	margin-top: 20px;
+	font-size: 13px;
+	line-height: 20px;
+	color: #999999;
+}
+.point-pay-info p{
+	padding-bottom: 5px;
 }
