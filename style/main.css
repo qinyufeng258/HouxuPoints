@@ -29,6 +29,12 @@
 	bottom: 10px;
 	color: #e6e6e6;
 }
+#myPointLink,#vipCardLink{
+	color: #fff;
+	background-color: #fff;
+}
+
+
 .vip-right{
 	position: absolute;
 	right: 10px;
@@ -82,5 +88,174 @@
 .middle-title{
 	padding-left: 10px;
 }
+#vipCard{
+	text-align: center;
+	
+}
+#vipCard .weui_cells_title{
+	text-align: left;
+	margin-bottom: 40px;
+
+}
+#vipCard .vipCodePic{
+	display: inline-block;
+	height: 30%;
+	width: 90%;
+}
+#vipCard .vipCodeNum{
+	margin-top: 10px;
+	letter-spacing: 1em;
+}
+#vipCard .adPic{
+	display: inline-block;
+	height: 30%;
+	width: 90%;
+	position: absolute;
+	left: 5%;
+	bottom: 10px;
+
+}
+#vipCard hr{
+	border-top: 1px solid #E6E6E6;
+	margin-top: 30px;
+}
+#vipCard .upbackground{
+	background-color: #fff;
+}
+#myPoint .weui_cell{
+	margin-top: 10px;
+}
+#myPoint .upbackground{
+	background-color: #fff;
+	text-align: center;	
+	margin-top: 10px;
 
 
+}
+#myPoint article div{
+	padding-bottom: 7px;
+	
+	border-bottom: 3px solid #f9f9f9;
+}
+#myPoint article h1,#myPoint article h2{
+	display: inline-block;
+}
+#myPoint article h1{
+	color:#FF8000;
+	font-size: 20px;
+}
+#myPoint .weui_cell{
+	
+}
+#myPoint .upbackground img{
+	padding-top: 20px;
+	width: 60%;
+	height: 60%;
+}
+#myPoint .point-pay-info{
+
+}
+#pointChange{
+}
+#pointChange .currentPoint{
+	text-align: center;
+	background-color: #fff;
+	line-height: 40px;
+}
+#pointChange .currentPoint h1,
+#pointChange .currentPoint h2{
+	display: inline-block;
+}
+#pointChange .currentPoint h1{
+	color:#FF8000;
+	font-size: 20px;
+}
+#pointChange .currentPoint h2{
+	font-size: 14px;
+	font-weight: normal;
+}
+#pointChange .pointChangeBtn{
+	background-color: #fff;
+	margin-top: 2px;
+	line-height: 50px;
+}
+#cardChangeBtn,
+#thingChangeBtn{
+	text-align: center;
+	display: inline-block;
+	width: 48%;
+
+}
+.pointChangeBtn img{
+	vertical-align: middle;
+	height: 20px;
+	padding-right: 5px;
+}
+#thingChangeBtn{
+	border-left: 3px solid #f7f7f7;
+}
+
+#thingChange{
+	display: none;
+	margin-top: 20px;
+}
+#cardChange{
+	display: block;
+	margin-top: 20px;
+}
+.limitedHead,
+.hottedHead{
+	background-color: #fff;
+	line-height: 40px;
+
+}
+.limitedHead h1,
+.hottedHead h1{
+	font-size: 16px;
+	font-weight: normal;
+	background-color: #FF8000;
+	display: inline-block;
+	color: #fff;
+	line-height: 30px;
+	width: 28%;
+	text-align: center;
+	padding-right: 10px;
+}
+.limitedHead span:after,
+.hottedHead span:after{
+	content:"";
+   	width: 0;
+   	height: 0;
+	font-size:0; 
+	
+	vertical-align: middle;
+
+    border-top: 15px solid transparent;
+    border-right:10px solid #fff;
+    border-bottom: 15px solid transparent;
+	position: absolute;
+	left: 28%;
+	margin-top: 5px;
+}
+.commonChange table{
+	width: 100%;
+	text-align: center;
+	
+
+}
+.commonChange table td{
+	background-color: #fff;
+	padding: 10px;
+}
+.commonChange table tr img{
+	display: inline-block;
+	width: 90%;
+	text-align: center;
+}
+.commonChange table td div{
+	font-size: 14px;
+}
+
+.hottedHead{
+	margin-top: 20px;
+}

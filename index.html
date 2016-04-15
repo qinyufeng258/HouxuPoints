@@ -7,8 +7,7 @@
 	<link rel="stylesheet" href="style/reset.css">
 	<link rel="stylesheet" href="style/jquery.mobile-1.4.5.css">
 	<link rel="stylesheet" href="style/weui.css">
-	<script src="js/jquery-2.1.4.min.js"></script>
-	<script src="js/jquery.mobile-1.4.5.js"></script>
+	
 	
 
 	<!-- 引入 jQuery Mobile 样式 -->
@@ -22,25 +21,28 @@
 
 </head>
 <body>
-	<div data-role="page" id="myinfo">
+	<div data-role="page" id="myHome">
 	  	<div class="up-background">
-	  		<div class="vip-card">
-				<div class="vip-title" >逅续会员积分卡</div>
-		  		<div class="vip-left">
-		  			<h4>会员卡号</h4>
-		  			<p id="vip-card-id">608080091</p>
-		  		</div>
-		  		<div class="vip-right">
-		  			<h4>我的积分</h4>
-		  			<p id="vip-card-points">2300</p>
-		  		</div>
-			</div>
-
-	  	</div>
+	  			<div class="vip-card" >
+					<div class="vip-title" >逅续会员积分卡</div>
+			  		<div class="vip-left">
+			  			<a id="vipCardLink" href="#vipCard" data-transition="slidefade" >
+				  			<h4>会员卡号</h4>
+				  			<p id="vip-card-id">608080091</p>
+			  			</a>
+			  		</div>
+			  		<div class="vip-right">
+			  			<a id="myPointLink" href="#myPoint" data-transition="slidefade" >
+				  			<h4>我的积分</h4>
+				  			<p id="vip-card-points">2300</p>
+				  		</a>
+			  		</div>
+				</div>		
+	  	</div><!-- 会员卡 end -->
 
 	  	<div class="middle-background">
 	  		<div class="weui_cells weui_cells_access " id="points-add" > 
-			    <a class="weui_cell" href="#mypoint" data-transition="slidefade" >
+			    <a class="weui_cell" href="#pointPay" data-transition="slidefade" >
 			        <div class="weui_cell_hd">
 			            <img src="images/shop.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
 			        </div>
@@ -51,7 +53,7 @@
 			            
 			        </div>
 			    </a>
-			    <a class="weui_cell" href="#">
+			    <a class="weui_cell" href="#pointChange">
 			        <div class="weui_cell_hd">
 			            <img src="images/shop.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
 			        </div>
@@ -61,8 +63,18 @@
 			        <div class="weui_cell_ft">				          
 			        </div>
 		   		</a>
+		   		<a class="weui_cell" href="#">
+			        <div class="weui_cell_hd">
+			            <img src="images/shop.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
+			        </div>
+			        <div class="weui_cell_bd weui_cell_primary middle-title">
+			            <p>我的兑换</p>
+			        </div>
+			        <div class="weui_cell_ft">				          
+			        </div>
+		   		</a>
 			</div>
-	  	</div>  
+	  	</div><!-- 积分信息 end -->
 
 	  	<div class="down-background">
 	  		<div class="weui_cells weui_cells_access">
@@ -71,7 +83,7 @@
 			            <img src="images/shop.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
 			        </div>
 			        <div class="weui_cell_bd weui_cell_primary middle-title">
-			            <p>我的地址</p>
+			            <p>个人信息</p>
 			        </div>
 			        <div class="weui_cell_ft">				          
 			        </div>
@@ -82,16 +94,16 @@
 			            <img src="images/shop.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
 			        </div>
 			        <div class="weui_cell_bd weui_cell_primary middle-title">
-			            <p>我的设置</p>
+			            <p>合作商户</p>
 			        </div>
 			        <div class="weui_cell_ft">				          
 			        </div>
 			   	</a>
 			</div>
-	  	</div>	
-	</div>
+	  	</div><!-- 个人信息 与 合作商户 end -->
+	</div><!-- 首页信息 end -->
 
-	<div data-role="page" id="mypoint" >
+	<div data-role="page" id="pointPay" >
 		<div class="weui_cells_title">积分充值</div>
 		<div class="weui_cells">
 		    <div class="weui_cell">
@@ -121,7 +133,7 @@
 	        
    		 </div>
 
-   		 <a href="#myinfo"  data-transition="slidefade"  data-direction="reverse" class="weui_btn weui_btn_plain_primary" id="point-pay-btn">支付</a>
+   		 <a href="#"  data-transition="slidefade"  data-direction="reverse" class="weui_btn weui_btn_plain_primary" id="point-pay-btn">支付</a>
 
    		 <div class="point-pay-info">
    		 	<p>积分卡充值说明：</p>
@@ -132,7 +144,244 @@
    		 		2.电脑登录逅续科技官方网站（www.whuahuw.com）可以查询积分卡状态信息，积分卡状态分为未激活，已激活，已使用三种状态。
    		 	</p>
    		 </div>
-	</div>
+	</div><!-- 积分充值 end -->
+
+
+	<div data-role="page" id="vipCard" >
+		<div class="upbackground">
+			<div class="weui_cells_title">会员卡号</div>
+			<img src="images/vipCode.jpg" alt="会员卡条形码" class="vipCodePic">
+			<p class="vipCodeNum">608080091</p>
+			<hr></hr>
+		</div>
+		
+
+		<img src="images/ad.jpg" alt="广告位图片" class="adPic">
+	</div><!-- 会员卡号 end -->
+
+	<div data-role="page" id="myPoint" >
+		<div class="weui_cells_title">我的积分</div>
+		<div class="upbackground">
+		<article class="weui_article">
+			<div>
+			    <h2>当前积分：</h2>
+				<h1>2300</h1>
+			</div>
+		    <section>
+		        <h2 class="title"></h2>
+		        <section>
+		            <img src="images/vipBarCode.jpg" alt="付款二维码">
+		        </section>
+		    </section>
+
+		</article>
+		</div>
+		<div class="point-pay-info">
+			<p>积分说明：</p>
+			<p>1.积分可以在部分合作商户实体店抵现使用，抵现比例为1积分=1元;</p>
+			<p>2.逅续公司有权对积分用途，使用规则和抵现比例做适当调整；</p>
+			<p>3.会员积分以自然年度为单位，有限期为1年，每自然年3月份最后一天，自动清零上一年度未使用的剩余积分。</p>
+		</div>
+	</div><!-- 会员积分 end -->
+
+	<div data-role="page" id="pointChange" >
+		<div class="weui_cells_title">积分兑换</div>
+		<div class="currentPoint">
+		    <h2>当前积分：</h2>
+			<h1>2300</h1>
+		</div>
+		<div class="pointChangeBtn">
+			
+			<a  href="#cardChange" id="cardChangeBtn">
+				<img src="images/shop.jpg" alt="icon">卡券兑换
+			</a>
+			<a  href="#thingChange" id="thingChangeBtn">
+				<img src="images/shop.jpg" alt="icon">实物兑换
+			</a>
+		</div>
+		
+
+		<div id="cardChange">
+			<div class="limitedHead">
+				<h1>
+					限量兑换
+				</h1>
+				<span>
+					
+				</span>
+			</div>
+			
+			<div class="limitedChange commonChange">
+				<table cellspacing="2">
+					<tr>
+						<td>
+							<img src="images/change01.jpg" alt="兑换券">
+							<div>
+								5元 优惠券
+							</div>
+						</td>
+						<td>
+							<img src="images/change01.jpg" alt="兑换券">
+							<div>
+								5元 优惠券
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+
+			<div class="hottedHead">
+				<h1>
+					热门兑换
+				</h1>
+				<span>
+					
+				</span>
+			</div>
+			<div class="hottedChange commonChange">
+				<table cellspacing="2">
+					<tr>
+						<td>
+							<img src="images/change02.jpg" alt="兑换券">
+							<div>
+								20元 优惠券
+							</div>
+						</td>
+						<td>
+							<img src="images/change01.jpg" alt="兑换券">
+							<div>
+								5元 优惠券
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<img src="images/change01.jpg" alt="兑换券">
+							<div>
+								5元 优惠券
+							</div>
+						</td>
+						<td>
+							<img src="images/change03.jpg" alt="兑换券">
+							<div>
+								10元 优惠券
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<img src="images/change01.jpg" alt="兑换券">
+							<div>
+								5元 优惠券
+							</div>
+						</td>
+						<td>
+							<img src="images/change02.jpg" alt="兑换券">
+							<div>
+								20元 优惠券
+							</div>
+						</td>
+					</tr>
+
+				</table>
+			</div>
+		</div>
+
+		<div id="thingChange">
+			<div class="limitedHead">
+				<h1>
+					限量兑换
+				</h1>
+				<span>
+					
+				</span>
+			</div>
+			
+			<div class="limitedChange commonChange">
+				<table cellspacing="2">
+					<tr>
+						<td>
+							<img src="images/change03.jpg" alt="兑换券">
+							<div>
+								10元 优惠券
+							</div>
+						</td>
+						<td>
+							<img src="images/change02.jpg" alt="兑换券">
+							<div>
+								20元 优惠券
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+
+
+			<div class="hottedHead">
+				<h1>
+					热门兑换
+				</h1>
+				<span>
+					
+				</span>
+			</div>
+			<div class="hottedChange commonChange">
+				<table cellspacing="2">
+					<tr>
+						<td>
+							<img src="images/change01.jpg" alt="兑换券">
+							<div>
+								5元 优惠券
+							</div>
+						</td>
+						<td>
+							<img src="images/change01.jpg" alt="兑换券">
+							<div>
+								5元 优惠券
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<img src="images/change01.jpg" alt="兑换券">
+							<div>
+								5元 优惠券
+							</div>
+						</td>
+						<td>
+							<img src="images/change02.jpg" alt="兑换券">
+							<div>
+								20元 优惠券
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<img src="images/change03.jpg" alt="兑换券">
+							<div>
+								10元 优惠券
+							</div>
+						</td>
+						<td>
+							<img src="images/change02.jpg" alt="兑换券">
+							<div>
+								20元 优惠券
+							</div>
+						</td>
+					</tr>
+
+				</table>
+			</div>
+		</div>
+	</div><!-- 积分兑换 end -->
 	
 </body>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.js"></script>
+	<script src="js/main.js"></script>
 </html>
