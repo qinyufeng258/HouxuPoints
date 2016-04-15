@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="style/reset.css">
 	<link rel="stylesheet" href="style/jquery.mobile-1.4.5.css">
 	<link rel="stylesheet" href="style/weui.css">
-	
+	<link rel="stylesheet" href="style/style.css">
 	
 
 	<!-- 引入 jQuery Mobile 样式 -->
@@ -63,7 +63,7 @@
 			        <div class="weui_cell_ft">				          
 			        </div>
 		   		</a>
-		   		<a class="weui_cell" href="#">
+		   		<a class="weui_cell" href="#myChange">
 			        <div class="weui_cell_hd">
 			            <img src="images/shop.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
 			        </div>
@@ -89,7 +89,7 @@
 			        </div>
 			   	</a>
 
-			   	<a class="weui_cell" href="#">
+			   	<a class="weui_cell" href="#copBusiness">
 			        <div class="weui_cell_hd">
 			            <img src="images/shop.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
 			        </div>
@@ -138,10 +138,10 @@
    		 <div class="point-pay-info">
    		 	<p>积分卡充值说明：</p>
    		 	<p>
-   		 		1.积分卡卡号为16位数字组成，密码为16位字母和数字混合组成。获得积分卡时请确认密码区涂层是否完整；
+   		 		1.卡号为12位数字组成，前两位以发行省份代码为准，后10为已序列号方式生成。<br>例如：<br>发行给北京市商户的积分卡卡号：110000000001、110000000002、110000000003……<br>发行给河北省商户的积分卡卡号：130000000001、130000000002、130000000003……
    		 	</p>
    		 	<p>
-   		 		2.电脑登录逅续科技官方网站（www.whuahuw.com）可以查询积分卡状态信息，积分卡状态分为未激活，已激活，已使用三种状态。
+   		 		2.密码为12位数字和字母混合组成，随机生成，其中数字1-9，字母A-Z（数字和字母易混淆除外）。
    		 	</p>
    		 </div>
 	</div><!-- 积分充值 end -->
@@ -393,11 +393,279 @@
 	        <div class="weui_cell">
 	            <div class="weui_cell_hd"><label for="" class="weui_label">生日</label></div>
 	            <div class="weui_cell_bd weui_cell_primary">
-	                <input class="weui_input" data-role='none' type="date" value=""/>
+	                <input class="weui_input" data-role='none' type="date" placeholder="请输入生日" value=""/>
 	            </div>
         	</div>
 
+			
+			<div class="weui_cell">
+	            <div class="weui_cell_hd"><label for="" class="weui_label">手机</label></div>
+	            <div class="weui_cell_bd weui_cell_primary">
+	                <input class="weui_input" data-role='none' type="number" pattern="[0-9]*" placeholder="请输入号码" value=""/>
+	            </div>
+        	</div>
+			
+			
+
+			<div class="weui_cell">
+	            <div class="weui_cell_hd"><label for="" class="weui_label">收货地址</label></div>
+	            <div class="weui_cell_bd weui_cell_primary">
+	                <input class="weui_input" data-role='none' type="text"  placeholder="请输入收货地址" value=""/>
+	            </div>
+        	</div>
+			
+
         </div>
+
+        <a href="#"  data-transition="slidefade"  data-direction="reverse" class="weui_btn weui_btn_plain_primary" id="info-save-btn">保存</a>
+	</div><!-- 个人信息 end -->
+
+	<div data-role="page" id="copBusiness" >
+		<div class="weui_cells_title">合作商户</div>
+
+		<div class="copTable">
+			<div class="copTableItem">
+				<div class="copContainer">
+					<img src="images/cop01.jpg" alt="合作商户商标">
+					<div class="copInfo">
+						<h1>南方商城店</h1>
+						<span>古坊路76弄南方休闲广场2楼【拨打时间：11：30-14：00】</span>
+					</div>
+					<span class="icon-circle-right rightBtn"></span>
+				</div>
+				<table class="copBtnTable" >
+					<tr>
+						<td>
+							<span class="icon-phone"></span>
+							<a href="tel:10086">预定</a>	
+						</td>
+
+						
+					</tr>
+				</table>
+			</div>
+			
+			<div class="copTableItem">
+				<div class="copContainer">
+					<img src="images/cop01.jpg" alt="合作商户商标">
+					<div class="copInfo">
+						<h1>南方商城店</h1>
+						<span>古坊路76弄南方休闲广场2楼【拨打时间：11：30-14：00】</span>
+					</div>
+					<span class="icon-circle-right rightBtn"></span>
+				</div>
+				<table class="copBtnTable" >
+					<tr>
+						<td>
+							<span class="icon-phone"></span>
+							<a href="tel:10086">预定</a>	
+						</td>
+
+						
+					</tr>
+				</table>
+			</div>
+			<div class="copTableItem">
+				<div class="copContainer">
+					<img src="images/cop01.jpg" alt="合作商户商标">
+					<div class="copInfo">
+						<h1>南方商城店</h1>
+						<span>古坊路76弄南方休闲广场2楼【拨打时间：11：30-14：00】</span>
+					</div>
+					<span class="icon-circle-right rightBtn"></span>
+				</div>
+				<table class="copBtnTable" >
+					<tr>
+						<td>
+							<span class="icon-phone"></span>
+							<a href="tel:10086">预定</a>	
+						</td>
+
+						
+					</tr>
+				</table>
+			</div>
+			<div class="copTableItem">
+				<div class="copContainer">
+					<img src="images/cop01.jpg" alt="合作商户商标">
+					<div class="copInfo">
+						<h1>南方商城店</h1>
+						<span>古坊路76弄南方休闲广场2楼【拨打时间：11：30-14：00】</span>
+					</div>
+					<span class="icon-circle-right rightBtn"></span>
+				</div>
+				<table class="copBtnTable" >
+					<tr>
+						<td>
+							<span class="icon-phone"></span>
+							<a href="tel:10086">预定</a>	
+						</td>
+
+						
+					</tr>
+				</table>
+			</div>
+			<div class="copTableItem">
+				<div class="copContainer">
+					<img src="images/cop01.jpg" alt="合作商户商标">
+					<div class="copInfo">
+						<h1>南方商城店</h1>
+						<span>古坊路76弄南方休闲广场2楼【拨打时间：11：30-14：00】</span>
+					</div>
+					<span class="icon-circle-right rightBtn"></span>
+				</div>
+				<table class="copBtnTable" >
+					<tr>
+						<td>
+							<span class="icon-phone"></span>
+							<a href="tel:10086">预定</a>	
+						</td>
+
+						
+					</tr>
+				</table>
+			</div>
+		
+
+		
+			
+		</div>
+	</div><!-- 合作商户 end -->
+
+	<div data-role="page" id="myChange" >
+		<div class="weui_cells_title">我的兑换</div>
+		<div class="pointChangeBtn">
+			
+			<a  href="#cardChange" id="mycardChangeBtn">
+				<img src="images/shop.jpg" alt="icon">卡券兑换
+			</a>
+			<a  href="#thingChange" id="mythingChangeBtn">
+				<img src="images/shop.jpg" alt="icon">实物兑换
+			</a>
+		</div>
+
+		<div id="mycardChange">
+			<div class="hottedHead">
+				<h1>
+					我的卡券
+				</h1>
+				<span>
+					
+				</span>
+			</div>
+			<div class="hottedChange commonChange">
+				<table cellspacing="2">
+					<tr>
+						<td>
+							<img src="images/change02.jpg" alt="兑换券">
+							<div>
+								20元 优惠券
+							</div>
+						</td>
+						<td>
+							<img src="images/change01.jpg" alt="兑换券">
+							<div>
+								5元 优惠券
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<img src="images/change01.jpg" alt="兑换券">
+							<div>
+								5元 优惠券
+							</div>
+						</td>
+						<td>
+							<img src="images/change03.jpg" alt="兑换券">
+							<div>
+								10元 优惠券
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<img src="images/change01.jpg" alt="兑换券">
+							<div>
+								5元 优惠券
+							</div>
+						</td>
+						<td>
+							<img src="images/change02.jpg" alt="兑换券">
+							<div>
+								20元 优惠券
+							</div>
+						</td>
+					</tr>
+
+				</table>
+			</div>
+		</div>
+
+		<div id="mythingChange">
+			<div class="hottedHead">
+				<h1>
+					我的实物
+				</h1>
+				<span>
+					
+				</span>
+			</div>
+			<div class="hottedChange commonChange">
+				<table cellspacing="2">
+					<tr>
+						<td>
+							<img src="images/change04.jpg" alt="兑换券">
+							<div>
+								笔记本电脑
+							</div>
+						</td>
+						<td>
+							<img src="images/change04.jpg" alt="兑换券">
+							<div>
+								笔记本电脑
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<img src="images/change04.jpg" alt="兑换券">
+							<div>
+								笔记本电脑
+							</div>
+						</td>
+						<td>
+							<img src="images/change04.jpg" alt="兑换券">
+							<div>
+								笔记本电脑
+							</div>
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<img src="images/change04.jpg" alt="兑换券">
+							<div>
+								笔记本电脑
+							</div>
+						</td>
+						<td>
+							<img src="images/change02.jpg" alt="兑换券">
+							<div>
+								笔记本电脑
+							</div>
+						</td>
+					</tr>
+
+				</table>
+			</div>
+		</div>
+
+		
+
 	</div>
 
 </body>

@@ -17,4 +17,20 @@ window.onload = function(){
 
 	});
 
+	$("#mythingChangeBtn").on("tap",function(){
+		//点击实物兑换按钮，显示实物图片
+
+ 		 $("#mythingChange").css("display","block");
+ 		 $("#mycardChange").css("display","none");
+
+	});
+
+	$("#mycardChangeBtn").on("tap",function(){
+		//点击卡券兑换按钮，显示卡券图片
+		
+ 		 $("#mythingChange").css("display","none");
+ 		 $("#mycardChange").css("display","block");
+
+	});
+
 }

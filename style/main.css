@@ -155,8 +155,8 @@
 #myPoint .point-pay-info{
 
 }
-#pointChange{
-}
+
+
 #pointChange .currentPoint{
 	text-align: center;
 	background-color: #fff;
@@ -246,10 +246,12 @@
 .commonChange table td{
 	background-color: #fff;
 	padding: 10px;
+	width: 50%;
 }
 .commonChange table tr img{
 	display: inline-block;
 	width: 90%;
+	height: 75px;
 	text-align: center;
 }
 .commonChange table td div{
@@ -259,4 +261,105 @@
 .hottedHead{
 	margin-top: 20px;
 }
+.weui_cell label{
+	padding-top: 5px;
+}
+
+#info-save-btn{
+	margin-top: 20px;
+	width: 50%;
+}
+.copBtnTable{
+	width: 100%;
+	text-align: center;
+	margin: 0 auto;
+}
+.copBtnTable td{
+	background-color: #fff;
+	padding: 10px;
+}
+.copTable img{
+	float: left;
+	display: inline-block;
+	width: 20%;
+	padding: 10px;
+}
+.copInfo{
+	float: right;
+	width: 70%;
+	padding-right: 10px;
+}
+.copInfo h1{
+	font-size: 16px;
+	font-weight: normal;
+	padding-top: 5px;
+}
+.copInfo span{
+	font-size: 12px;
+	color: #808080;
+
+}
+.copContainer{
+	position: relative;
+	margin: 0 auto;
+	width: 100%;
+	overflow: hidden;
+	background-color: #fff;
+}
+.copBtnTable tr td a,
+.copBtnTable tr td span
+{
+	color:#36E729;
+}
+.copTableItem{
+	width: 94%;
+	margin: 0 auto;
+	border: 1px solid #E6E6E6;
+	margin-bottom: 20px;
+}
+.copTable{
+	margin-top: 10px;
+}
+
+.rightBtn{
+	position: absolute;
+	right: 10px;
+	top: 48%;
+	color:#B3B3B3;
+}
+#myChange .pointChangeBtn{
+	background-color: #fff;
+	margin-top: 2px;
+	line-height: 50px;
+}
+
+#mycardChangeBtn,
+#mythingChangeBtn{
+	text-align: center;
+	display: inline-block;
+	width: 48%;
+
+}
+#mythingChangeBtn{
+	border-left: 3px solid #f7f7f7;
+}
+
+#mythingChange{
+	display: none;
+	margin-top: 20px;
+}
+#mycardChange{
+	display: block;
+	margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+
 
