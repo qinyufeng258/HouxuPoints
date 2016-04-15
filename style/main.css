@@ -100,10 +100,15 @@
 #vipCard .vipCodePic{
 	display: inline-block;
 	height: 30%;
-	width: 90%;
+	width: 70%;
+	padding: 10px 0px;
+}
+#vipCard .vipBinCodePic{
+	height: 30%;
+	width: 50%;
 }
 #vipCard .vipCodeNum{
-	margin-top: 10px;
+	margin-top: 0px;
 	letter-spacing: 1em;
 }
 #vipCard .adPic{
@@ -115,12 +120,14 @@
 	bottom: 10px;
 
 }
-#vipCard hr{
-	border-top: 1px solid #E6E6E6;
-	margin-top: 30px;
-}
+
 #vipCard .upbackground{
+	padding-top: 10px;
+	padding-bottom: 10px;
 	background-color: #fff;
+	margin:0 25px 0px 25px;
+	margin-top: -20px;
+	box-shadow:2px 2px 3px #999999;
 }
 #myPoint .weui_cell{
 	margin-top: 10px;
@@ -129,13 +136,15 @@
 	background-color: #fff;
 	text-align: center;	
 	margin-top: 10px;
-
+	margin:20px;
+	box-shadow:2px 2px 3px #999999;
 
 }
 #myPoint article div{
 	padding-bottom: 7px;
-	
-	border-bottom: 3px solid #f9f9f9;
+	height: 20px;
+	line-height: 13px;
+	border-bottom: 2px solid #f9f9f9;
 }
 #myPoint article h1,#myPoint article h2{
 	display: inline-block;
@@ -149,11 +158,11 @@
 }
 #myPoint .upbackground img{
 	padding-top: 20px;
-	width: 60%;
-	height: 60%;
+	width: 70%;
+	height: 70%;
 }
 #myPoint .point-pay-info{
-
+	padding: 20px;
 }
 
 
@@ -246,7 +255,7 @@
 .commonChange table td{
 	background-color: #fff;
 	padding: 10px;
-	width: 50%;
+	width: 49%;
 }
 .commonChange table tr img{
 	display: inline-block;
@@ -282,12 +291,14 @@
 	float: left;
 	display: inline-block;
 	width: 20%;
+	max-width: 100px;
 	padding: 10px;
 }
 .copInfo{
-	float: right;
-	width: 70%;
+	float: left;
+	width: 60%;
 	padding-right: 10px;
+	vertical-align: middle;
 }
 .copInfo h1{
 	font-size: 16px;
@@ -351,6 +362,20 @@
 #mycardChange{
 	display: block;
 	margin-top: 20px;
+}
+#alertWindow{
+	display: none;
+}
+#alertContent span{
+	display: inline-block;
+	font-size: 14px;
+	letter-spacing: 0.6em;
+	text-align: center;
+}
+#alertContent img{
+	display: inline-block;
+	width: 70%;
+	text-align: center;
 }
 
 

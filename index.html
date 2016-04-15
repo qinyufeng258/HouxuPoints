@@ -146,13 +146,15 @@
    		 </div>
 	</div><!-- 积分充值 end -->
 
-
 	<div data-role="page" id="vipCard" >
+		<div class="weui_cells_title">会员卡号</div>
 		<div class="upbackground">
-			<div class="weui_cells_title">会员卡号</div>
-			<img src="images/vipCode.jpg" alt="会员卡条形码" class="vipCodePic">
 			<p class="vipCodeNum">608080091</p>
-			<hr></hr>
+			
+			<img src="images/vipCode.jpg" alt="会员卡条形码" class="vipCodePic">
+			
+			<img src="images/vipBarCode.jpg" alt="付款二维码" class="vipBinCodePic">
+			
 		</div>
 		
 
@@ -304,9 +306,9 @@
 				<table cellspacing="2">
 					<tr>
 						<td>
-							<img src="images/change03.jpg" alt="兑换券">
+							<img src="images/change04.jpg" alt="兑换券">
 							<div>
-								10元 优惠券
+								笔记本 一台
 							</div>
 						</td>
 						<td>
@@ -332,9 +334,9 @@
 				<table cellspacing="2">
 					<tr>
 						<td>
-							<img src="images/change01.jpg" alt="兑换券">
+							<img src="images/change04.jpg" alt="兑换券">
 							<div>
-								5元 优惠券
+								笔记本 一台
 							</div>
 						</td>
 						<td>
@@ -347,9 +349,9 @@
 
 					<tr>
 						<td>
-							<img src="images/change01.jpg" alt="兑换券">
+							<img src="images/change04.jpg" alt="兑换券">
 							<div>
-								5元 优惠券
+								笔记本 一台
 							</div>
 						</td>
 						<td>
@@ -617,10 +619,12 @@
 				<table cellspacing="2">
 					<tr>
 						<td>
+							
 							<img src="images/change04.jpg" alt="兑换券">
 							<div>
 								笔记本电脑
 							</div>
+							
 						</td>
 						<td>
 							<img src="images/change04.jpg" alt="兑换券">
@@ -663,10 +667,19 @@
 				</table>
 			</div>
 		</div>
+	</div><!-- 我的兑换 end-->
 
-		
-
+	<div class="weui_dialog_alert" id="alertWindow">
+	    <div class="weui_mask"></div>
+	    <div class="weui_dialog">
+	        <div class="weui_dialog_hd"><strong class="weui_dialog_title" id="alertTitle">提示</strong></div>
+	        <div class="weui_dialog_bd" id="alertContent"></div>
+	        <div class="weui_dialog_ft">
+	            <a href="#" class="weui_btn_dialog primary">我知道了</a>
+	        </div>
+	    </div>
 	</div>
+
 
 </body>
 	<script src="js/jquery-2.1.4.min.js"></script>
