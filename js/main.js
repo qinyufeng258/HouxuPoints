@@ -1,11 +1,11 @@
 window.onload = function(){
 
-	var mtc = document.getElementById("mycardChange");
-	
+	//var mtc = document.getElementById("mycardChange");
+	var mtc = $("#mycardChange");
 	var mcc = document.getElementById("mythingChange");
-
-	var mcards = mtc.getElementsByClassName("changeItemBox");
-
+	//var mcc = $("#mythingChange");
+	//var mcards = mtc.getElementsByClassName("changeItemBox");
+	var mcards = $(".changeItemBox");
 	var mthings = mcc.getElementsByClassName("changeItemBox");
 
 	$("#thingChangeBtn").on("tap",function(){
@@ -48,26 +48,29 @@ window.onload = function(){
 
 	});
 
-	for (var i = mcards.length - 1; i >= 0; i--) {
-		(function(e){
 
-			mcards[e].ontouchstart = function(){
+	mcards.on("tap",function(){
 
-				var card_id = this.dataset.id;
-				document.getElementById("alertTitle").innerHTML = "卡券详情";
-				document.getElementById("alertContent").innerHTML ="<span>"+  card_id  + "</span><img src='images/vipCode.jpg'>";
+		var card_id = this.dataset.id;
+		document.getElementById("alertTitle").innerHTML = "卡券详情";
+		document.getElementById("alertContent").innerHTML ="<span>"+  card_id  + "</span><img src='images/vipCode.jpg'>";
 
-				$("#alertWindow").css("display","block");
+		$("#alertWindow").css("display","block");
+	});
 
-			};
 
-		})(i);
-	}
+	// for (var i = mcards.length - 1; i >= 0; i--) {
+	// 	(function(e){
+
+			
+
+	// 	})(i);
+	// }
 
 	for (var i = mthings.length - 1; i >= 0; i--) {
 		(function(e){
 
-			mthings[e].ontouchstart = function(){
+			mthings[e].on = function(){
 
 				//获取对应元素的id属性后，显示id 和 条形码图片
 				var card_id = this.dataset.id;
