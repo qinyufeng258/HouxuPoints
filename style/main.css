@@ -391,9 +391,15 @@
 	width: 13%;
 	height: 90px;
 	background-color: #ccc;
-	writing-mode:tb-rl;
 	text-align: center;
+	
 	padding-right: 3%;
+	
+}
+.changeItemBox .state{
+	padding-top: 40%;
+	padding-left: 30%;
+	writing-mode:tb-rl;
 	
 }
 .changeItemBox .changeInfo{
@@ -473,7 +479,7 @@
 	color:#333333;
 }
 .isNew .changeState{
-	background-color: #00ED01;
+	background-color: #00D104;
 }
 
 .isTimeOut .state{
@@ -486,7 +492,7 @@
 	color:#ccc;
 }
 .isTimeOut .changeState{
-	background-color: #FF8000;
+	background-color: #DD6F00;
 }
 
 
