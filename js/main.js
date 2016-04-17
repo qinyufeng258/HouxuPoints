@@ -42,9 +42,12 @@ window.onload = function(){
 
 	$("#alertWindow a").on("tap",function(){
 		
- 		 $("#alertWindow").css("display","none");
+		setTimeout(function(){
+			 $("#alertWindow").css("display","none");
  		document.getElementById("alertTitle").innerHTML = ""
 		document.getElementById("alertContent").innerHTML = "";
+		},400);
+ 		
 
 	});
 
