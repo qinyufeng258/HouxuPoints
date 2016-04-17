@@ -1,6 +1,6 @@
 window.onload = function(){
 
-	var mtc = document.getElementById("mycardChangeInfo");
+	var mtc = document.getElementById("mycardChange");
 	
 	var mcc = document.getElementById("mythingChange");
 
