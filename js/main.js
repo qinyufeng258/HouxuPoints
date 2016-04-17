@@ -1,7 +1,12 @@
 window.onload = function(){
 
-	var mtc = document.getElementById("mycardChange");
+	var mtc = document.getElementById("mycardChangeInfo");
+	
 	var mcc = document.getElementById("mythingChange");
+
+	var mcards = mtc.getElementsByClassName("changeItemBox");
+
+	var mthings = mcc.getElementsByClassName("changeItemBox");
 
 	$("#thingChangeBtn").on("tap",function(){
 		//点击实物兑换按钮，显示实物图片
@@ -43,73 +48,140 @@ window.onload = function(){
 
 	});
 
-	EventUtil.addHandler(mtc, "click", function(event){
+	for (var i = mcards.length - 1; i >= 0; i--) {
+		(function(e){
 
-		//统一事件处理程序
-		event = EventUtil.getEvent(event);
-		var target = EventUtil.getTarget(event);
-		var content;
-		//console.log(target);
+			mcards[e].onclick = function(){
 
-		if (target.tagName == "IMG" || target.tagName == "DIV") {
+				var card_id = this.dataset.id;
+				document.getElementById("alertTitle").innerHTML = "卡券详情";
+				document.getElementById("alertContent").innerHTML ="<span>"+  card_id  + "</span><img src='images/vipCode.jpg'>";
 
-			document.getElementById("alertTitle").innerHTML = "卡券详情"
-			document.getElementById("alertContent").innerHTML ="<span>128888088821</span><img src='images/vipCode.jpg'>"
+				$("#alertWindow").css("display","block");
+
+			};
+
+		})(i);
+	}
+
+	for (var i = mthings.length - 1; i >= 0; i--) {
+		(function(e){
+
+			mthings[e].onclick = function(){
+
+				//获取对应元素的id属性后，显示id 和 条形码图片
+				var card_id = this.dataset.id;
+				var fatherNode = this;
+				var textNode;
+				//console.log(fatherNode);
+				var imgNode = fatherNode.getElementsByTagName("img")[0];
+				var desNode = fatherNode.getElementsByClassName("thingName")[0].innerHTML;
+
+				//console.log(desNode);
+				var content = imgNode.cloneNode();//实物图片
+				var descNode = "商品名称："  + desNode;
+				var timeNode = "兑换时间：" + "2016年04月15日";
+				var stateNode = "订单状态：" + "已发货";
+				var expressNode = "订单号：<a href='http://m.kuaidi100.com/result.jsp?com=yuantong&nu=712983721893'>712983721893</a>";
+
+
+				textNode = document.createTextNode(descNode);
+				var desc = document.createElement("div")
+				desc.appendChild(textNode);
+
+				textNode = document.createTextNode(timeNode);
+				var time = document.createElement("div")
+				time.appendChild(textNode);
+
+				textNode = document.createTextNode(stateNode);
+				var state = document.createElement("div")
+				state.appendChild(textNode);
+
+				
+				var express = document.createElement("div");
+				express.innerHTML = expressNode;
+				
+				//console.log(desc);
+
+				document.getElementById("alertTitle").innerHTML = "实物详情"
+				document.getElementById("alertContent").appendChild(content);
+				document.getElementById("alertContent").appendChild(desc);
+				document.getElementById("alertContent").appendChild(time);
+				document.getElementById("alertContent").appendChild(state);
+				document.getElementById("alertContent").appendChild(express);
+
+				$("#alertWindow").css("display","block");
+
+			};
+
+		})(i);
+	}
+
+	// EventUtil.addHandler(mtc, "click", function(event){
+
+	// 	//统一事件处理程序
+	// 	event = EventUtil.getEvent(event);
+	// 	var target = EventUtil.getTarget(event);
+	// 	var content;
+	
+	// 	if (event.className == "changeItemBox") {
+	// 		console.log(target);
+	// 		document.getElementById("alertTitle").innerHTML = "卡券详情"
+	// 		document.getElementById("alertContent").innerHTML ="<span>128888088821</span><img src='images/vipCode.jpg'>"
 			
-			$("#alertWindow").css("display","block");
+	// 		$("#alertWindow").css("display","block");
+	// 	}
 
-		}
+	// });
 
-	});
+	// EventUtil.addHandler(mcc, "click", function(event){
 
-	EventUtil.addHandler(mcc, "click", function(event){
+	// 	//统一事件处理程序
+	// 	event = EventUtil.getEvent(event);
+	// 	var target = EventUtil.getTarget(event);
+	// 	var content;
+	// 	var desc;
+	// 	var time;
+	// 	var state;
+	// 	//console.log(target);
 
-		//统一事件处理程序
-		event = EventUtil.getEvent(event);
-		var target = EventUtil.getTarget(event);
-		var content;
-		var desc;
-		var time;
-		var state;
-		//console.log(target);
+	// 	if (target.tagName == "IMG" || target.tagName == "DIV" || target.tagName == "SPAN") {
 
-		if (target.tagName == "IMG" || target.tagName == "DIV") {
+	// 		var fatherNode = target.parentNode;
+	// 		//console.log(fatherNode);
+	// 		var imgNode = fatherNode.getElementsByTagName("img")[0];
+	// 		var desNode = fatherNode.getElementsByTagName("div")[0].innerHTML;
+	// 		content = imgNode.cloneNode();
+	// 		desNode = "商品名称："  + desNode;
+	// 		timeNode = "兑换时间：" + "2016年04月15日";
+	// 		stateNode = "物流状态：" + "已发货";
 
-			var fatherNode = target.parentNode;
-			//console.log(fatherNode);
-			var imgNode = fatherNode.getElementsByTagName("img")[0];
-			var desNode = fatherNode.getElementsByTagName("div")[0].innerHTML;
-			content = imgNode.cloneNode();
-			desNode = "商品名称："  + desNode;
-			timeNode = "兑换时间：" + "2016年04月15日";
-			stateNode = "物流状态：" + "已发货";
+	// 		var textNode = document.createTextNode(desNode);
+	// 		desc = document.createElement("div")
+	// 		desc.appendChild(textNode);
 
-			var textNode = document.createTextNode(desNode);
-			desc = document.createElement("div")
-			desc.appendChild(textNode);
+	// 		textNode = document.createTextNode(timeNode);
+	// 		time = document.createElement("div")
+	// 		time.appendChild(textNode);
 
-			textNode = document.createTextNode(timeNode);
-			time = document.createElement("div")
-			time.appendChild(textNode);
-
-			textNode = document.createTextNode(stateNode);
-			state = document.createElement("div")
-			state.appendChild(textNode);
+	// 		textNode = document.createTextNode(stateNode);
+	// 		state = document.createElement("div")
+	// 		state.appendChild(textNode);
 			
-			//console.log(desc);
+	// 		//console.log(desc);
 
-			document.getElementById("alertTitle").innerHTML = "实物详情"
-			document.getElementById("alertContent").appendChild(content);
-			document.getElementById("alertContent").appendChild(desc);
-			document.getElementById("alertContent").appendChild(time);
-			document.getElementById("alertContent").appendChild(state);
+	// 		document.getElementById("alertTitle").innerHTML = "实物详情"
+	// 		document.getElementById("alertContent").appendChild(content);
+	// 		document.getElementById("alertContent").appendChild(desc);
+	// 		document.getElementById("alertContent").appendChild(time);
+	// 		document.getElementById("alertContent").appendChild(state);
 
 
-			$("#alertWindow").css("display","block");
+	// 		$("#alertWindow").css("display","block");
 
-		}
+	// 	}
 
-	});
+	// });
 
 
 }

@@ -222,7 +222,7 @@
 .hottedHead h1{
 	font-size: 16px;
 	font-weight: normal;
-	background-color: #FF8000;
+	background-color: #FF0000;
 	display: inline-block;
 	color: #fff;
 	line-height: 30px;
@@ -246,26 +246,8 @@
 	left: 28%;
 	margin-top: 5px;
 }
-.commonChange table{
-	width: 100%;
-	text-align: center;
-	
 
-}
-.commonChange table td{
-	background-color: #fff;
-	padding: 10px;
-	width: 49%;
-}
-.commonChange table tr img{
-	display: inline-block;
-	width: 90%;
-	height: 75px;
-	text-align: center;
-}
-.commonChange table td div{
-	font-size: 14px;
-}
+
 
 .hottedHead{
 	margin-top: 20px;
@@ -365,12 +347,20 @@
 }
 #alertWindow{
 	display: none;
+	z-index: 100;
 }
 #alertContent span{
 	display: inline-block;
 	font-size: 14px;
 	letter-spacing: 0.6em;
-	text-align: center;
+	text-align: left;
+}
+#alertContent div{
+	text-align: left;
+	margin: 0 auto;
+	padding-left: 40px;
+	font-size: 13px;
+	line-height: 40px;
 }
 #alertContent img{
 	display: inline-block;
@@ -380,6 +370,147 @@
 .select_id{
 	margin-left: -20px;
 	padding-top: 3px;
+}
+.changeItemBox{
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 10px;
+}
+.commonChange table{
+	width: 100%;
+	text-align: center;
+	padding: 10px;
+
+}
+.changeItemBox{
+	border-radius: 10px;
+	
+}
+.changeItemBox .changeState{
+	float:left;
+	width: 13%;
+	height: 90px;
+	background-color: #ccc;
+	writing-mode:tb-rl;
+	text-align: center;
+	padding-right: 3%;
+	
+}
+.changeItemBox .changeInfo{
+	float:left;
+	width: 83%;
+	height: 80px;
+	background-color: #fff;
+	padding-top: 10px;
+}
+.changeInfo .changeMoney{
+	float:left;
+	width: 30%;
+	text-align: center;
+}
+.changeInfo .changeMoney img{
+	width: 100%;
+	padding-top: 10px;
+}
+.changeInfo .changeMoney h2{
+	display: inline-block;
+	font-size: 14px;
+	font-weight: normal;
+}
+.changeInfo .changeMoney span{
+	font-size: 35px;
+}
+.changeInfo .changeMoney p{
+	
+	font-size: 0.7em;
+	line-height: 5px;
+
+}
+.changeInfo .changeTime{
+	float:left;
+	font-size:14px;
+	width: 60%;
+	text-align: left;
+	padding-top: 2%;
+	padding-left: 5%;
+	
+}
+.changeInfo .changeTime h1{
+
+	font-size: 20px;
+	font-weight: normal;
+
+}
+.changeInfo .changeTime span{
+	display: block;
+	font-size: 10px;
+
+}
+.changeInfo .changeTime .dialogInfo{
+	position: absolute;
+	right: 15px;
+	bottom: 5px;
+	
+}
+
+
+.isUsed .state{
+	color: #FFFFFF;
+}
+.isUsed span,
+.isUsed .dialogInfo,
+.isUsed p ,
+.isUsed h2,.isUsed h1{
+	color:#ccc;
+}
+.isNew .state{
+	color: #FFFFFF;
+}
+.isNew span,
+.isNew .dialogInfo,
+.isNew p ,
+.isNew h2,.isNew h1{
+	color:#333333;
+}
+.isNew .changeState{
+	background-color: #00ED01;
+}
+
+.isTimeOut .state{
+	color: #FFFFFF;
+}
+.isTimeOut span,
+.isTimeOut .dialogInfo,
+.isTimeOut p ,
+.isTimeOut h2,.isTimeOut h1{
+	color:#ccc;
+}
+.isTimeOut .changeState{
+	background-color: #FF8000;
+}
+
+
+.circleLeft{
+	position: absolute;
+	background-color: #f9f9f9;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	top:50%;
+	margin-top: -7.5px;
+	left:-7.5px;
+	z-index: 2;
+}
+.circleRight{
+	position: absolute;
+	background-color: #f9f9f9;
+	height: 15px;
+	width: 15px;
+	border-radius: 50%;
+	top:50%;
+	margin-top: -7.5px;
+	right:-3px;
+	z-index: 2;
 }
 
 
