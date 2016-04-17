@@ -138,10 +138,10 @@
    		 <div class="point-pay-info">
    		 	<p>积分卡充值说明：</p>
    		 	<p>
-   		 		1.卡号为12位数字组成，前两位以发行省份代码为准，后10为已序列号方式生成。<br>例如：<br>发行给北京市商户的积分卡卡号：110000000001、110000000002、110000000003……<br>发行给河北省商户的积分卡卡号：130000000001、130000000002、130000000003……
+   		 		1. 积分卡卡号为12位数字组成，密码为12位字母和数字混合组成。获得积分卡时请确认密码区涂层是否完整；
    		 	</p>
    		 	<p>
-   		 		2.密码为12位数字和字母混合组成，随机生成，其中数字1-9，字母A-Z（数字和字母易混淆除外）。
+   		 		2. 电脑登录逅续科技官方网站（www.whuahuw.com）可以查询积分卡状态信息，积分卡状态分为未激活，已激活，已使用三种状态。
    		 	</p>
    		 </div>
 	</div><!-- 积分充值 end -->
@@ -408,6 +408,17 @@
         	</div>
 			
 			
+			<div class="weui_cell weui_cell_select weui_select_after">
+	           <div class="weui_cell_hd"><label for="" class="weui_label">身份</label></div>
+	            <div class="weui_cell_bd weui_cell_primary select_id" >
+	                <select class="weui_select" name="select2" data-role='none'>
+	                    <option value="1">我是帅哥</option>
+	                    <option value="2">我是美女</option>
+	                    <option value="3">我是帅哥（学生）</option>
+	                    <option value="4">我是美女（学生）</option>
+	                </select>
+	            </div>
+        	</div>
 
 			<div class="weui_cell">
 	            <div class="weui_cell_hd"><label for="" class="weui_label">收货地址</label></div>
@@ -416,6 +427,9 @@
 	            </div>
         	</div>
 			
+
+			
+
 
         </div>
 
@@ -442,7 +456,10 @@
 							<a href="tel:10086">预定</a>	
 						</td>
 
-						
+						<td>
+							<span class="icon-compass"></span>
+							<a href="http://apis.map.qq.com/uri/v1/routeplan?type=bus&from=我的位置&to=南方商城店&tocoord=39.9836,116.3164&policy=1&referer=myapp">导航</a>	
+						</td>
 					</tr>
 				</table>
 			</div>
@@ -678,7 +695,7 @@
 	            <a href="#" class="weui_btn_dialog primary">我知道了</a>
 	        </div>
 	    </div>
-	</div>
+	</div><!-- 实物兑换 弹出窗口 end -->
 
 
 </body>
