@@ -51,7 +51,7 @@ window.onload = function(){
 	for (var i = mcards.length - 1; i >= 0; i--) {
 		(function(e){
 
-			mcards[e].onclick = function(){
+			mcards[e].ontouchstart = function(){
 
 				var card_id = this.dataset.id;
 				document.getElementById("alertTitle").innerHTML = "卡券详情";
@@ -67,7 +67,7 @@ window.onload = function(){
 	for (var i = mthings.length - 1; i >= 0; i--) {
 		(function(e){
 
-			mthings[e].onclick = function(){
+			mthings[e].ontouchstart = function(){
 
 				//获取对应元素的id属性后，显示id 和 条形码图片
 				var card_id = this.dataset.id;
