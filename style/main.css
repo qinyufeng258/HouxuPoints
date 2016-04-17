@@ -368,7 +368,7 @@
 	text-align: center;
 }
 .select_id{
-	margin-left: -20px;
+	
 	padding-top: 3px;
 }
 .changeItemBox{
@@ -384,30 +384,30 @@
 }
 .changeItemBox{
 	border-radius: 10px;
-	
+	box-shadow:1px 1px 1px #C1C1C1;
 }
 .changeItemBox .changeState{
 	float:left;
-	width: 13%;
+	width: 10%;
 	height: 90px;
 	background-color: #ccc;
 	text-align: center;
-	
+	padding-left: 3%;
 	padding-right: 3%;
+	padding-top: 2%;
 	
 }
 .changeItemBox .state{
-	padding-top: 40%;
-	padding-left: 30%;
-	writing-mode:tb-rl;
+	 font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
+	
 	
 }
 .changeItemBox .changeInfo{
 	float:left;
 	width: 83%;
-	height: 80px;
+	height: 90px;
 	background-color: #fff;
-	padding-top: 10px;
+	padding-top: 2%;
 }
 .changeInfo .changeMoney{
 	float:left;
@@ -424,7 +424,7 @@
 	font-weight: normal;
 }
 .changeInfo .changeMoney span{
-	font-size: 35px;
+	font-size: 2em;
 }
 .changeInfo .changeMoney p{
 	
