@@ -107,8 +107,8 @@ window.onload = function(){
 
 		var card_id = this.dataset.id;
 
-		$.mobile.changePage ('index.html#changeDesc', 'fade');
-		
+		$.mobile.changePage ('index.html#changeDesc', 'fade',false,false);
+
 		document.getElementById("goodImg").src = "images/change04.jpg";
 		document.getElementById("goodTitle").innerHTML = "笔记本电脑";
 		document.getElementById("goodNeedPoints").innerHTML = "所需积分：64000";
