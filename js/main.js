@@ -13,7 +13,7 @@ window.onload = function(){
 
 	var pthings = $("#thingChange td");
 
-	var changeInfo = $(".ususalChange td img");
+	var changeInfo = $(".ususalChange td");
 
 	$("#thingChangeBtn").on("tap",function(){
 		//点击实物兑换按钮，显示实物图片
@@ -107,6 +107,8 @@ window.onload = function(){
 
 		var card_id = this.dataset.id;
 
+		$.mobile.changePage ('index.html#changeDesc', 'fade');
+		
 		document.getElementById("goodImg").src = "images/change04.jpg";
 		document.getElementById("goodTitle").innerHTML = "笔记本电脑";
 		document.getElementById("goodNeedPoints").innerHTML = "所需积分：64000";
@@ -116,7 +118,7 @@ window.onload = function(){
 		document.getElementById("nowPoints").innerHTML = "您的当前积分：2300";
 		
 
-		$.mobile.changePage ('index.html#changeDesc', 'fade');
+		
 
 
 
