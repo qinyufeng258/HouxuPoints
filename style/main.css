@@ -539,7 +539,16 @@
 	padding-top: 10px;
 }
 #changeDesc {
-	padding: 10px 20px;
+	padding: 10px 0px;
+}
+#changeDesc img,
+#changeDesc h1,
+#changeDesc h3,
+#changeDesc h2,
+#changeDesc p,
+#changeDesc div{
+	padding-left: 10px;
+	padding-right: 10px;
 }
 #changeDesc img{
 	display: block;
