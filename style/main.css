@@ -170,6 +170,8 @@
 	text-align: center;
 	background-color: #fff;
 	line-height: 40px;
+	display: inline-block;
+	width: 48%;
 }
 #pointChange .currentPoint h1,
 #pointChange .currentPoint h2{
@@ -183,13 +185,21 @@
 	font-size: 14px;
 	font-weight: normal;
 }
+#pointChange .currentPoint img{
+	vertical-align: middle;
+	height: 20px;
+	padding-right: 5px;
+	display: inline-block;
+}
 #pointChange .pointChangeBtn{
 	background-color: #fff;
 	margin-top: 2px;
 	line-height: 50px;
 }
+
 #cardChangeBtn,
-#thingChangeBtn{
+#thingChangeBtn,
+#myChangeBtn{
 	text-align: center;
 	display: inline-block;
 	width: 48%;
@@ -382,6 +392,7 @@
 	padding: 10px;
 
 }
+
 .changeItemBox{
 	border-radius: 10px;
 	box-shadow:1px 1px 1px #C1C1C1;
@@ -518,10 +529,89 @@
 	right:-3px;
 	z-index: 2;
 }
+.ususalChange table tr td{
+	width: 49%;
+	background-color: #fff;
+}
+.ususalChange table tr td img{
+	display: inline-block;
+	width: 90%;
+	padding-top: 10px;
+}
+#changeDesc {
+	padding: 10px 20px;
+}
+#changeDesc img{
+	display: block;
+	width: 100%;
+	height: 150px;
 
+}
+#goodTitle{
 
+	font-size: 20px;
+	font-weight: normal;
+	color: #59B4C1;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#goodNeedPoints{
+	font-size: 16px;
+	font-weight: normal;
+}
 
+#changeDesc h2{
+	padding-top: 20px;
+	font-size: 18px;
+	padding-bottom: 10px;
+}
+#changeDesc p{
+	font-size: 14px;
+	color:#808080;
+}
 
+.otherInfoTitle{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.imChange{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background-color: #fff;
+	height: 90px;
+	width: 100%;
+	text-align: center;
+}
+.imChange p{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+#lookOutInfo{
+	margin-bottom: 150px;
+}
+#imChangeBtn{
+	display: inline-block;
+	padding:5px;
+	color: #FFFFFF;
+	background-color: #20A8FF;
+	width: 80%;
+	border-radius: 5px;
+}
+
+#cancelBtn{
+	color: #7F7F7F;
+	border-right: 2px solid #E6E6E6;
+}
+.weui_btn_dialog{
+	border-top: 2px solid #E6E6E6;
+}
+
+#alertWindowChange{
+	display: none;
+}
 
 
 

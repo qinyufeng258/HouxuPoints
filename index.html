@@ -58,21 +58,12 @@
 			            <img src="images/shop.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
 			        </div>
 			        <div class="weui_cell_bd weui_cell_primary middle-title">
-			            <p>积分兑换</p>
+			            <p>积分商城</p>
 			        </div>
 			        <div class="weui_cell_ft">				          
 			        </div>
 		   		</a>
-		   		<a class="weui_cell" href="#myChange">
-			        <div class="weui_cell_hd">
-			            <img src="images/shop.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
-			        </div>
-			        <div class="weui_cell_bd weui_cell_primary middle-title">
-			            <p>我的兑换</p>
-			        </div>
-			        <div class="weui_cell_ft">				          
-			        </div>
-		   		</a>
+		   		
 			</div>
 	  	</div><!-- 积分信息 end -->
 
@@ -187,11 +178,26 @@
 	</div><!-- 会员积分 end -->
 
 	<div data-role="page" id="pointChange" >
-		<div class="weui_cells_title">积分兑换</div>
-		<div class="currentPoint">
+		<div class="weui_cells_title">积分商城</div>
+		<!-- <div class="currentPoint">
 		    <h2>当前积分：</h2>
 			<h1>2300</h1>
-		</div>
+			<a  href="#myChange" id="thingChangeBtn">
+					<img src="images/shop.jpg" alt="icon">兑换记录
+			</a>
+		</div> -->
+		
+		<div class="pointChangeBtn">
+			
+			<div class="currentPoint">
+				<h2>当前积分：</h2>
+				<h1>2300</h1>
+			</div>
+			<a  href="#myChange" id="myChangeBtn">
+				<img src="images/shop.jpg" alt="icon">兑换记录
+			</a>
+		</div>	
+		
 		<div class="pointChangeBtn">
 			
 			<a  href="#cardChange" id="cardChangeBtn">
@@ -213,17 +219,19 @@
 				</span>
 			</div>
 			
-			<div class="limitedChange commonChange">
+			<div class="limitedChange commonChange ususalChange">
 				<table cellspacing="2">
 					<tr>
 						<td>
-							<img src="images/change01.jpg" alt="兑换券">
+							
+							<img data-id="12321313" src="images/change01.jpg" alt="兑换券">
+		
 							<div>
 								5元 优惠券
 							</div>
 						</td>
 						<td>
-							<img src="images/change01.jpg" alt="兑换券">
+							<img data-id="12321313" src="images/change01.jpg" alt="兑换券">
 							<div>
 								5元 优惠券
 							</div>
@@ -241,17 +249,17 @@
 					
 				</span>
 			</div>
-			<div class="hottedChange commonChange">
+			<div class="hottedChange commonChange ususalChange">
 				<table cellspacing="2">
 					<tr>
 						<td>
-							<img src="images/change02.jpg" alt="兑换券">
+							<img data-id="12321313" src="images/change02.jpg" alt="兑换券">
 							<div>
 								20元 优惠券
 							</div>
 						</td>
 						<td>
-							<img src="images/change01.jpg" alt="兑换券">
+							<img data-id="12321313" src="images/change01.jpg" alt="兑换券">
 							<div>
 								5元 优惠券
 							</div>
@@ -260,13 +268,13 @@
 
 					<tr>
 						<td>
-							<img src="images/change01.jpg" alt="兑换券">
+							<img data-id="12321313" src="images/change01.jpg" alt="兑换券">
 							<div>
 								5元 优惠券
 							</div>
 						</td>
 						<td>
-							<img src="images/change03.jpg" alt="兑换券">
+							<img data-id="12321313" src="images/change03.jpg" alt="兑换券">
 							<div>
 								10元 优惠券
 							</div>
@@ -275,13 +283,13 @@
 
 					<tr>
 						<td>
-							<img src="images/change01.jpg" alt="兑换券">
+							<img data-id="12321313" src="images/change01.jpg" alt="兑换券">
 							<div>
 								5元 优惠券
 							</div>
 						</td>
 						<td>
-							<img src="images/change02.jpg" alt="兑换券">
+							<img data-id="12321313" src="images/change02.jpg" alt="兑换券">
 							<div>
 								20元 优惠券
 							</div>
@@ -302,17 +310,17 @@
 				</span>
 			</div>
 			
-			<div class="limitedChange commonChange">
+			<div class="limitedChange commonChange ususalChange">
 				<table cellspacing="2">
 					<tr>
 						<td>
-							<img src="images/change04.jpg" alt="兑换券">
+							<img data-id="12321313" src="images/change04.jpg" alt="兑换券">
 							<div>
 								笔记本 一台
 							</div>
 						</td>
 						<td>
-							<img src="images/change02.jpg" alt="兑换券">
+							<img data-id="12321313" src="images/change02.jpg" alt="兑换券">
 							<div>
 								20元 优惠券
 							</div>
@@ -330,17 +338,17 @@
 					
 				</span>
 			</div>
-			<div class="hottedChange commonChange">
+			<div class="hottedChange commonChange ususalChange">
 				<table cellspacing="2">
 					<tr>
 						<td>
-							<img src="images/change04.jpg" alt="兑换券">
+							<img data-id="12321313" src="images/change04.jpg" alt="兑换券">
 							<div>
 								笔记本 一台
 							</div>
 						</td>
 						<td>
-							<img src="images/change01.jpg" alt="兑换券">
+							<img data-id="12321313" src="images/change01.jpg" alt="兑换券">
 							<div>
 								5元 优惠券
 							</div>
@@ -349,13 +357,13 @@
 
 					<tr>
 						<td>
-							<img src="images/change04.jpg" alt="兑换券">
+							<img data-id="12321313" src="images/change04.jpg" alt="兑换券">
 							<div>
 								笔记本 一台
 							</div>
 						</td>
 						<td>
-							<img src="images/change02.jpg" alt="兑换券">
+							<img data-id="12321313" src="images/change02.jpg" alt="兑换券">
 							<div>
 								20元 优惠券
 							</div>
@@ -364,13 +372,13 @@
 
 					<tr>
 						<td>
-							<img src="images/change03.jpg" alt="兑换券">
+							<img data-id="12321313" src="images/change03.jpg" alt="兑换券">
 							<div>
 								10元 优惠券
 							</div>
 						</td>
 						<td>
-							<img src="images/change02.jpg" alt="兑换券">
+							<img data-id="12321313" src="images/change02.jpg" alt="兑换券">
 							<div>
 								20元 优惠券
 							</div>
@@ -380,7 +388,7 @@
 				</table>
 			</div>
 		</div>
-	</div><!-- 积分兑换 end -->
+	</div><!-- 积分商城 end -->
 	
 	<div data-role="page" id="myChange" >
 		<div class="weui_cells_title">我的兑换</div>
@@ -560,7 +568,7 @@
 								<span class="circleLeft"></span>
 								<span class="circleRight"></span>
 								<div class="changeState">
-									<span class="state">已 兑 换</span>
+									<span class="state">已<br>兑<br>换</span>
 								</div>
 								<div class="changeInfo">
 									<div class="changeMoney">
@@ -591,7 +599,7 @@
 								<span class="circleLeft"></span>
 								<span class="circleRight"></span>
 								<div class="changeState">
-									<span class="state">已 兑 换</span>
+									<span class="state">已<br>兑<br>换</span>
 								</div>
 								<div class="changeInfo">
 									<div class="changeMoney">
@@ -717,7 +725,11 @@
 							<span class="icon-phone"></span>
 							<a href="tel:10086">预定</a>	
 						</td>
-
+						
+						<td>
+							<span class="icon-compass"></span>
+							<a href="http://apis.map.qq.com/uri/v1/search?keyword=南方商城店&region=北京&referer=myapp">导航</a>	
+						</td>
 						
 					</tr>
 				</table>
@@ -738,6 +750,33 @@
 							<a href="tel:10086">预定</a>	
 						</td>
 
+						<td>
+							<span class="icon-compass"></span>
+							<a href="http://apis.map.qq.com/uri/v1/search?keyword=南方商城店&region=北京&referer=myapp">导航</a>	
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="copTableItem">
+				<div class="copContainer">
+					<img src="images/cop01.jpg" alt="合作商户商标">
+					<div class="copInfo">
+						<h1>南方商城店</h1>
+						<span>古坊路76弄南方休闲广场2楼【拨打时间：11：30-14：00】</span>
+					</div>
+					<span class="icon-circle-right rightBtn"></span>
+				</div>
+				<table class="copBtnTable" >
+					<tr>
+						<td>
+							<span class="icon-phone"></span>
+							<a href="tel:10086">预定</a>	
+						</td>
+						
+						<td>
+							<span class="icon-compass"></span>
+							<a href="http://apis.map.qq.com/uri/v1/search?keyword=南方商城店&region=北京&referer=myapp">导航</a>	
+						</td>
 						
 					</tr>
 				</table>
@@ -758,24 +797,9 @@
 							<a href="tel:10086">预定</a>	
 						</td>
 
-						
-					</tr>
-				</table>
-			</div>
-			<div class="copTableItem">
-				<div class="copContainer">
-					<img src="images/cop01.jpg" alt="合作商户商标">
-					<div class="copInfo">
-						<h1>南方商城店</h1>
-						<span>古坊路76弄南方休闲广场2楼【拨打时间：11：30-14：00】</span>
-					</div>
-					<span class="icon-circle-right rightBtn"></span>
-				</div>
-				<table class="copBtnTable" >
-					<tr>
 						<td>
-							<span class="icon-phone"></span>
-							<a href="tel:10086">预定</a>	
+							<span class="icon-compass"></span>
+							<a href="http://apis.map.qq.com/uri/v1/search?keyword=南方商城店&region=北京&referer=myapp">导航</a>	
 						</td>
 
 						
@@ -789,6 +813,32 @@
 		</div>
 	</div><!-- 合作商户 end -->
 
+	<div data-role="page" id="changeDesc" >
+		<img src="" alt="礼品图片" id="goodImg">
+
+		<h1 id="goodTitle">商品标题</h1>
+		<h3 id="goodNeedPoints">所需积分：2000分</h3>
+		<h2>商品详情</h2>
+		<p id="goodInfo">
+			
+		</p>
+
+		<p class="otherInfoTitle">兑换说明</p>
+		<p id="goodChangeInfo">
+			
+		</p>
+
+		<p class="otherInfoTitle">注意事项</p>
+		<p id="lookOutInfo">
+			
+		</p>
+
+		<div class="imChange">
+			<p id="nowPoints"></p>
+			<a href="#" id="imChangeBtn">立即兑换</a>
+		</div>
+	</div><!-- 积分兑换 详情页 end -->
+
 	<div class="weui_dialog_alert" id="alertWindow">
 	    <div class="weui_mask"></div>
 	    <div class="weui_dialog">
@@ -798,8 +848,56 @@
 	            <a href="#" class="weui_btn_dialog primary">我知道了</a>
 	        </div>
 	    </div>
-	</div><!-- 实物兑换 弹出窗口 end -->
+	</div><!-- 兑换记录 弹出窗口 end -->
 
+	<div class="weui_dialog_alert" id="alertWindowChange">
+	    <div class="weui_mask"></div>
+	    <div class="weui_dialog">
+	        <div class="weui_dialog_hd"><strong class="weui_dialog_title" id="alertTitle">确定使用 1 积分兑换</strong></div>
+	        <div class="weui_dialog_bd" id="alertContent">
+	        	兑换码将在兑换成功后发送给您，请按后续的提示使用
+	        </div>
+	        <div class="weui_dialog_ft">
+	            <a href="#" class="weui_btn_dialog primary" id="cancelBtn">取消</a>
+
+	            <a href="#" class="weui_btn_dialog primary" id="rightBtn">确定</a>
+	        </div>
+	    </div>
+	</div><!-- 兑换记录 弹出窗口 end -->
+
+	<div data-role="page" class="weui_msg" id="changeRightPage">
+	    <div class="weui_icon_area"><i class="weui_icon_success weui_icon_msg"></i></div>
+	    <div class="weui_text_area">
+	        <h2 class="weui_msg_title">兑换成功</h2>
+	        <p class="weui_msg_desc">请在积分商城-兑换记录里查看</p>
+	    </div>
+	    <div class="weui_opr_area">
+	        <p class="weui_btn_area">
+	            <a href="javascript:;" class="weui_btn weui_btn_primary" id="backToHome">确定</a>
+	           
+	        </p>
+	    </div>
+	    <div class="weui_extra_area">
+	      
+	    </div>
+	</div>
+
+	<div data-role="page" class="weui_msg" id="changeWrongPage">
+	    <div class="weui_icon_area"><i class="weui_icon_msg weui_icon_warn"></i></div>
+	    <div class="weui_text_area">
+	        <h2 class="weui_msg_title">兑换失败</h2>
+	        <p class="weui_msg_desc">积分不足 或 库存不足</p>
+	    </div>
+	    <div class="weui_opr_area">
+	        <p class="weui_btn_area">
+	            <a href="javascript:;" class="weui_btn weui_btn_primary" id="backToHome2">确定</a>
+	           
+	        </p>
+	    </div>
+	    <div class="weui_extra_area">
+	      
+	    </div>
+	</div>
 
 </body>
 	<script src="js/jquery-2.1.4.min.js"></script>

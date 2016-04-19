@@ -5,8 +5,15 @@ window.onload = function(){
 	var mcc = document.getElementById("mythingChange");
 	//var mcc = $("#mythingChange");
 	//var mcards = mtc.getElementsByClassName("changeItemBox");
-	var mcards = $(".changeItemBox");
-	var mthings = mcc.getElementsByClassName("changeItemBox");
+	var mcards = $("#mycardChange .changeItemBox");
+	//var mthings = mcc.getElementsByClassName("changeItemBox");
+	var mthings = $("#mythingChange .changeItemBox");
+
+	var pcards = $("#cardChange td");
+
+	var pthings = $("#thingChange td");
+
+	var changeInfo = $(".ususalChange td img");
 
 	$("#thingChangeBtn").on("tap",function(){
 		//点击实物兑换按钮，显示实物图片
@@ -43,14 +50,77 @@ window.onload = function(){
 	$("#alertWindow a").on("tap",function(){
 		
 		setTimeout(function(){
-			 $("#alertWindow").css("display","none");
- 		document.getElementById("alertTitle").innerHTML = ""
-		document.getElementById("alertContent").innerHTML = "";
+			$("#alertWindow").css("display","none");
+ 			document.getElementById("alertTitle").innerHTML = ""
+			document.getElementById("alertContent").innerHTML = "";
 		},400);
  		
+	});
+
+	$("#alertWindowChange #cancelBtn").on("tap",function(){
+		
+		setTimeout(function(){
+			$("#alertWindowChange").css("display","none");
+ 			document.getElementById("alertTitle").innerHTML = ""
+			document.getElementById("alertContent").innerHTML = "";
+		},400);
+ 		
+	});
+
+	$("#alertWindowChange #rightBtn").on("tap",function(){
+		
+		setTimeout(function(){
+			$("#alertWindowChange").css("display","none");
+ 			document.getElementById("alertTitle").innerHTML = ""
+			document.getElementById("alertContent").innerHTML = "";
+
+			var myPoint = 0;
+			if(myPoint >-90){
+				$.mobile.changePage ('index.html#changeRightPage', 'fade');
+			}else{
+				$.mobile.changePage ('index.html#changeWrongPage', 'fade');
+			}
+			
+			
+		},400);
+ 		
+	});
+
+	$("#backToHome").on("tap",function(){
+
+		$.mobile.changePage ('index.html', 'fade');
+	});
+
+	$("#backToHome2").on("tap",function(){
+
+		$.mobile.changePage ('index.html', 'fade');
+	});
+
+	$("#imChangeBtn").on("tap",function(){
+
+		$("#alertWindowChange").css("display","block");
 
 	});
 
+
+	changeInfo.on("tap",function(){
+
+		var card_id = this.dataset.id;
+
+		document.getElementById("goodImg").src = "images/change04.jpg";
+		document.getElementById("goodTitle").innerHTML = "笔记本电脑";
+		document.getElementById("goodNeedPoints").innerHTML = "所需积分：64000";
+		document.getElementById("goodInfo").innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id, consectetur eveniet molestiae ducimus totam est eius dicta error, dolorum beatae, debitis, quam commodi nihil in tempora ratione saepe dolorem.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id, consectetur eveniet molestiae ducimus totam est eius dicta error, dolorum beatae, debitis, quam commodi nihil in tempora ratione saepe dolorem.";
+		document.getElementById("goodChangeInfo").innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id, consectetur eveniet molestiae ducimus totam est eius dicta error, dolorum beatae, debitis, quam commodi nihil in tempora ratione saepe dolorem.";
+		document.getElementById("lookOutInfo").innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id, consectetur eveniet molestiae ducimus totam est eius dicta error, dolorum beatae, debitis, quam commodi nihil in tempora ratione saepe dolorem.";
+		document.getElementById("nowPoints").innerHTML = "您的当前积分：2300";
+		
+
+		$.mobile.changePage ('index.html#changeDesc', 'fade');
+
+
+
+	});
 
 	mcards.on("tap",function(){
 
@@ -61,67 +131,53 @@ window.onload = function(){
 		$("#alertWindow").css("display","block");
 	});
 
+	mthings.on("tap",function(){
 
-	// for (var i = mcards.length - 1; i >= 0; i--) {
-	// 	(function(e){
+		//获取对应元素的id属性后，显示id 和 条形码图片
+		var card_id = this.dataset.id;
+		var fatherNode = this;
+		var textNode;
+		//console.log(fatherNode);
+		var imgNode = fatherNode.getElementsByTagName("img")[0];
+		var desNode = fatherNode.getElementsByClassName("thingName")[0].innerHTML;
 
-			
-
-	// 	})(i);
-	// }
-
-	for (var i = mthings.length - 1; i >= 0; i--) {
-		(function(e){
-
-			mthings[e].on = function(){
-
-				//获取对应元素的id属性后，显示id 和 条形码图片
-				var card_id = this.dataset.id;
-				var fatherNode = this;
-				var textNode;
-				//console.log(fatherNode);
-				var imgNode = fatherNode.getElementsByTagName("img")[0];
-				var desNode = fatherNode.getElementsByClassName("thingName")[0].innerHTML;
-
-				//console.log(desNode);
-				var content = imgNode.cloneNode();//实物图片
-				var descNode = "商品名称："  + desNode;
-				var timeNode = "兑换时间：" + "2016年04月15日";
-				var stateNode = "订单状态：" + "已发货";
-				var expressNode = "订单号：<a href='http://m.kuaidi100.com/result.jsp?com=yuantong&nu=712983721893'>712983721893</a>";
+		//console.log(desNode);
+		var content = imgNode.cloneNode();//实物图片
+		var descNode = "商品名称："  + desNode;
+		var timeNode = "兑换时间：" + "2016年04月15日";
+		var stateNode = "订单状态：" + "已发货";
+		var expressNode = "订单号：<a href='http://m.kuaidi100.com/result.jsp?com=yuantong&nu=712983721893'>712983721893</a>";
 
 
-				textNode = document.createTextNode(descNode);
-				var desc = document.createElement("div")
-				desc.appendChild(textNode);
+		textNode = document.createTextNode(descNode);
+		var desc = document.createElement("div")
+		desc.appendChild(textNode);
 
-				textNode = document.createTextNode(timeNode);
-				var time = document.createElement("div")
-				time.appendChild(textNode);
+		textNode = document.createTextNode(timeNode);
+		var time = document.createElement("div")
+		time.appendChild(textNode);
 
-				textNode = document.createTextNode(stateNode);
-				var state = document.createElement("div")
-				state.appendChild(textNode);
+		textNode = document.createTextNode(stateNode);
+		var state = document.createElement("div")
+		state.appendChild(textNode);
 
-				
-				var express = document.createElement("div");
-				express.innerHTML = expressNode;
-				
-				//console.log(desc);
+		
+		var express = document.createElement("div");
+		express.innerHTML = expressNode;
+		
+		//console.log(desc);
 
-				document.getElementById("alertTitle").innerHTML = "实物详情"
-				document.getElementById("alertContent").appendChild(content);
-				document.getElementById("alertContent").appendChild(desc);
-				document.getElementById("alertContent").appendChild(time);
-				document.getElementById("alertContent").appendChild(state);
-				document.getElementById("alertContent").appendChild(express);
+		document.getElementById("alertTitle").innerHTML = "实物详情"
+		document.getElementById("alertContent").appendChild(content);
+		document.getElementById("alertContent").appendChild(desc);
+		document.getElementById("alertContent").appendChild(time);
+		document.getElementById("alertContent").appendChild(state);
+		document.getElementById("alertContent").appendChild(express);
 
-				$("#alertWindow").css("display","block");
+		$("#alertWindow").css("display","block");
 
-			};
-
-		})(i);
-	}
+	});
+	
 
 	// EventUtil.addHandler(mtc, "click", function(event){
 
