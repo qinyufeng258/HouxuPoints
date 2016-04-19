@@ -106,16 +106,16 @@ window.onload = function(){
 	changeInfo.on("tap",function(){
 
 		var card_id = this.dataset.id;
-
+		alert("1");
 		$.mobile.changePage ('index.html#changeDesc', 'fade',false,false);
-
-		document.getElementById("goodImg").src = "images/change04.jpg";
-		document.getElementById("goodTitle").innerHTML = "笔记本电脑";
-		document.getElementById("goodNeedPoints").innerHTML = "所需积分：64000";
-		document.getElementById("goodInfo").innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id, consectetur eveniet molestiae ducimus totam est eius dicta error, dolorum beatae, debitis, quam commodi nihil in tempora ratione saepe dolorem.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id, consectetur eveniet molestiae ducimus totam est eius dicta error, dolorum beatae, debitis, quam commodi nihil in tempora ratione saepe dolorem.";
-		document.getElementById("goodChangeInfo").innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id, consectetur eveniet molestiae ducimus totam est eius dicta error, dolorum beatae, debitis, quam commodi nihil in tempora ratione saepe dolorem.";
-		document.getElementById("lookOutInfo").innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id, consectetur eveniet molestiae ducimus totam est eius dicta error, dolorum beatae, debitis, quam commodi nihil in tempora ratione saepe dolorem.";
-		document.getElementById("nowPoints").innerHTML = "您的当前积分：2300";
+		alert("2");
+		// document.getElementById("goodImg").src = "images/change04.jpg";
+		// document.getElementById("goodTitle").innerHTML = "笔记本电脑";
+		// document.getElementById("goodNeedPoints").innerHTML = "所需积分：64000";
+		// document.getElementById("goodInfo").innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id, consectetur eveniet molestiae ducimus totam est eius dicta error, dolorum beatae, debitis, quam commodi nihil in tempora ratione saepe dolorem.<br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id, consectetur eveniet molestiae ducimus totam est eius dicta error, dolorum beatae, debitis, quam commodi nihil in tempora ratione saepe dolorem.";
+		// document.getElementById("goodChangeInfo").innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id, consectetur eveniet molestiae ducimus totam est eius dicta error, dolorum beatae, debitis, quam commodi nihil in tempora ratione saepe dolorem.";
+		// document.getElementById("lookOutInfo").innerHTML = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque id, consectetur eveniet molestiae ducimus totam est eius dicta error, dolorum beatae, debitis, quam commodi nihil in tempora ratione saepe dolorem.";
+		// document.getElementById("nowPoints").innerHTML = "您的当前积分：2300";
 		
 
 		
