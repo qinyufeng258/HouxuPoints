@@ -76,9 +76,9 @@ window.onload = function(){
 
 			var myPoint = 0;
 			if(myPoint >-90){
-				$.mobile.changePage ('index.html#changeRightPage', 'fade');
+				$.mobile.changePage ($("#changeRightPage"), 'fade');
 			}else{
-				$.mobile.changePage ('index.html#changeWrongPage', 'fade');
+				$.mobile.changePage ($("#changeWrongPage"), 'fade');
 			}
 			
 			
