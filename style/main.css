@@ -1,629 +1,896 @@
-.vip-card{
-	width: 80%;
-	position: absolute;
-	top:15px;
-	left: 10%;
-	height: 180px;
-	margin: 0 auto;
-	border-radius: 10px;
-	background: url(../images/vipcard.png) no-repeat;
-	background-size:100% 100%;
+.vip-card
+{
+    position: absolute;
+    top: 15px;
+    left: 10%;
 
-}
-.vip-card p{
-	font-size: 18px;
-	font-weight: normal;
-}
-.vip-card h4{
-	font-size: 11px;
-	font-weight: normal;
-}
-.vip-title{
-	text-align: center;
-	padding-top: 10px;
-	color:#E6E6E6;
-}
-.vip-left{
-	position: absolute;
-	left: 10px;
-	bottom: 10px;
-	color: #e6e6e6;
-}
-#myPointLink,#vipCardLink{
-	color: #fff;
-	background-color: #fff;
-}
+    width: 80%;
+    height: 180px;
+    margin: 0 auto;
 
+    border-radius: 10px;
+    background: url(../images/vipcard.png) no-repeat;
+    background-size: 100% 100%;
+}
+.vip-card p
+{
+    font-size: 18px;
+    font-weight: normal;
+}
+.vip-card h4
+{
+    font-size: 11px;
+    font-weight: normal;
+}
+.vip-title
+{
+    padding-top: 10px;
 
-.vip-right{
-	position: absolute;
-	right: 10px;
-	bottom: 10px;
-	color: #e6e6e6;
-}
-.up-background{
-	background-color: #333333;
-	height: 160px;
-	font-size: 12px;
+    text-align: center;
 
+    color: #e6e6e6;
 }
-#points-add::before{
-	border-top: 0px;
-}
-.middle-background{
-	padding-top: 10%;
-	background-color: #fff;
-	font: STHeiti;
-}
-.middle-background a{
-	padding: 15px 15px;
-}
-.down-background{
-	margin-top: 40px;
-	background-color: #fff;
+.vip-left
+{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
 
+    color: #e6e6e6;
+}
+#myPointLink,
+#vipCardLink
+{
+    color: #fff;
+    background-color: #fff;
 }
 
 
-#point-pay-btn{
-	margin-top: 20px;
-	width: 50%;
+.vip-right
+{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
 
+    color: #e6e6e6;
 }
-#mypoint{
-	padding-top: 20px;
-}
-.point-pay-info{
+.up-background
+{
+    font-size: 12px;
 
-	margin-top: 20px;
-	font-size: 13px;
-	line-height: 20px;
-	color: #999999;
-	padding: 10px;
+    height: 160px;
+
+    background-color: #333;
 }
-.point-pay-info p{
-	padding-bottom: 5px;
+#points-add::before
+{
+    border-top: 0;
+}
+.middle-background
+{
+    font: STHeiti;
+
+    padding-top: 10%;
+
+    background-color: #fff;
+}
+.middle-background a
+{
+    padding: 15px 15px;
+}
+.down-background
+{
+    margin-top: 40px;
+
+    background-color: #fff;
 }
 
-.middle-title{
-	padding-left: 10px;
+
+#point-pay-btn
+{
+    width: 50%;
+    margin-top: 20px;
 }
-#vipCard{
-	text-align: center;
+#mypoint
+{
+    padding-top: 20px;
+}
+.point-pay-info
+{
+    font-size: 13px;
+    line-height: 20px;
+
+    margin-top: 20px;
+    padding: 10px;
+
+    color: #999;
+}
+.point-pay-info p
+{
+    padding-bottom: 5px;
+}
+
+.middle-title
+{
+    padding-left: 10px;
+}
+#vipCard
+{
+    text-align: center;
+    height: 100%;
+}
+#vipCard .weui_cells_title
+{
+    margin-bottom: 40px;
+
+    text-align: left;
+}
+#vipCard .vipCodePic
+{
+    display: inline-block;
+
+    width: 70%;
+    height: 30%;
+    padding: 10px 0;
+}
+#vipCard .vipBinCodePic
+{
+    width: 50%;
+    height: 30%;
+}
+#vipCard .vipCodeNum
+{
+    margin-top: 0;
+
+    letter-spacing: 1em;
+}
+#vipCard .adPic
+{
+    float: left;
+	margin-left: 10px;
+    display: block;
+	padding-right: 10px;
+    width:  30%;
+    padding-bottom: 20%;
 	
+	margin-top: -4%;
+   
 }
-#vipCard .weui_cells_title{
-	text-align: left;
-	margin-bottom: 40px;
-
-}
-#vipCard .vipCodePic{
-	display: inline-block;
-	height: 30%;
-	width: 70%;
-	padding: 10px 0px;
-}
-#vipCard .vipBinCodePic{
-	height: 30%;
-	width: 50%;
-}
-#vipCard .vipCodeNum{
-	margin-top: 0px;
-	letter-spacing: 1em;
-}
-#vipCard .adPic{
-	display: inline-block;
-	height: 30%;
+#vipCard .adContainer{
+	position: relative;
+	top: 60px;
 	width: 90%;
-	position: absolute;
-	left: 5%;
-	bottom: 10px;
-
-}
-
-#vipCard .upbackground{
-	padding-top: 10px;
-	padding-bottom: 10px;
+	margin: 0 auto;
+	height: 20%;
 	background-color: #fff;
-	margin:0 25px 0px 25px;
-	margin-top: -20px;
-	box-shadow:2px 2px 3px #999999;
-}
-#myPoint .weui_cell{
-	margin-top: 10px;
-}
-#myPoint .upbackground{
-	background-color: #fff;
-	text-align: center;	
-	margin-top: 10px;
-	margin:20px;
-	box-shadow:2px 2px 3px #999999;
-
-}
-#myPoint article div{
-	padding-bottom: 7px;
-	height: 20px;
-	line-height: 13px;
-	border-bottom: 2px solid #f9f9f9;
-}
-#myPoint article h1,#myPoint article h2{
-	display: inline-block;
-}
-#myPoint article h1{
-	color:#FF8000;
-	font-size: 20px;
-}
-#myPoint .weui_cell{
+	text-align: left;
+	border: 1px solid #E6E6E6;
 	
 }
-#myPoint .upbackground img{
-	padding-top: 20px;
-	width: 70%;
-	height: 70%;
-}
-#myPoint .point-pay-info{
-	padding: 20px;
+#vipCard .adContainer span{
+	position: absolute;
+	left:35%;
+	top:10%;
+	display: block;
+	font-size: 16px;
+	font-weight: normal;
 }
 
+#vipCard .adContainer p{
 
-#pointChange .currentPoint{
-	text-align: center;
-	background-color: #fff;
-	line-height: 40px;
-	display: inline-block;
-	width: 48%;
-}
-#pointChange .currentPoint h1,
-#pointChange .currentPoint h2{
-	display: inline-block;
-}
-#pointChange .currentPoint h1{
-	color:#FF8000;
-	font-size: 20px;
-}
-#pointChange .currentPoint h2{
 	font-size: 14px;
 	font-weight: normal;
+	color: #B3B3B3;
+
 }
-#pointChange .currentPoint img{
-	vertical-align: middle;
-	height: 20px;
-	padding-right: 5px;
-	display: inline-block;
+#vipCard .tips{
+	font-size: 14px;
+	font-weight: normal;
+	color:#fff;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	background-color: #7F7F7F;
+	border-top-left-radius: 10px;
+	padding: 5px;
+	opacity: 0.5;
 }
-#pointChange .pointChangeBtn{
-	background-color: #fff;
-	margin-top: 2px;
-	line-height: 50px;
+
+#vipCard .upbackground
+{
+    padding-top: 10px;
+    padding-bottom: 30px;
+
+    background-color: #fff;
+}
+#myPoint .weui_cell
+{
+    margin-top: 10px;
+}
+#myPoint .upbackground
+{
+    margin: 20px;
+    margin-top: 10px;
+
+    text-align: center;
+
+    background-color: #fff;
+    box-shadow: 2px 2px 3px #999;
+}
+#myPoint article div
+{
+    line-height: 13px;
+
+    height: 20px;
+    padding-bottom: 7px;
+
+    border-bottom: 2px solid #f9f9f9;
+}
+#myPoint article h1,
+#myPoint article h2
+{
+    display: inline-block;
+}
+#myPoint article h1
+{
+    font-size: 20px;
+
+    color: #ff8000;
+}
+
+#myPoint .upbackground img
+{
+    width: 100%;
+  
+    
+}
+#myPoint .point-pay-info
+{
+    padding: 20px;
+}
+
+
+#pointChange .currentPoint
+{
+    line-height: 40px;
+
+    display: inline-block;
+
+    width: 48%;
+
+    text-align: center;
+
+    background-color: #fff;
+}
+#pointChange .currentPoint h1,
+#pointChange .currentPoint h2
+{
+    display: inline-block;
+}
+#pointChange .currentPoint h1
+{
+    font-size: 20px;
+
+    color: #ff8000;
+}
+#pointChange .currentPoint h2
+{
+    font-size: 14px;
+    font-weight: normal;
+}
+#pointChange .currentPoint img
+{
+    display: inline-block;
+
+    height: 20px;
+    padding-right: 5px;
+
+    vertical-align: middle;
+}
+#pointChange .pointChangeBtn
+{
+    line-height: 50px;
+
+    margin-top: 2px;
+
+    background-color: #fff;
 }
 
 #cardChangeBtn,
 #thingChangeBtn,
-#myChangeBtn{
-	text-align: center;
-	display: inline-block;
-	width: 48%;
+#myChangeBtn
+{
+    display: inline-block;
 
-}
-.pointChangeBtn img{
-	vertical-align: middle;
-	height: 20px;
-	padding-right: 5px;
-}
-#thingChangeBtn{
-	border-left: 3px solid #f7f7f7;
-}
+    width: 48%;
 
-#thingChange{
-	display: none;
-	margin-top: 20px;
+    text-align: center;
 }
-#cardChange{
-	display: block;
-	margin-top: 20px;
+.pointChangeBtn img
+{
+    height: 20px;
+    padding-right: 5px;
+
+    vertical-align: middle;
+}
+#thingChangeBtn
+{
+    border-left: 3px solid #f7f7f7;
+}
+#cardChangeBtn img,
+#thingChangeBtn img{
+	 height: 60px;
+	 padding-top: 10px;
+}
+#cardChangeBtn p,
+#thingChangeBtn p{
+	font-size: 12px;
+}
+#thingChange
+{
+    display: none;
+
+    margin-top: 20px;
+}
+#cardChange
+{
+    display: block;
+
+    margin-top: 20px;
 }
 .limitedHead,
-.hottedHead{
-	background-color: #fff;
-	line-height: 40px;
+.hottedHead
+{
+    line-height: 40px;
 
+    background-color: #fff;
 }
 .limitedHead h1,
-.hottedHead h1{
-	font-size: 16px;
-	font-weight: normal;
-	background-color: #FF0000;
-	display: inline-block;
-	color: #fff;
-	line-height: 30px;
-	width: 28%;
-	text-align: center;
-	padding-right: 10px;
+.hottedHead h1
+{
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 30px;
+
+    display: inline-block;
+
+    width: 28%;
+    padding-right: 10px;
+
+    text-align: center;
+
+    color: #fff;
+    background-color: #f00;
 }
 .limitedHead span:after,
-.hottedHead span:after{
-	content:"";
-   	width: 0;
-   	height: 0;
-	font-size:0; 
-	
-	vertical-align: middle;
+.hottedHead span:after
+{
+    font-size: 0;
+
+    position: absolute;
+    left: 28%;
+
+    width: 0;
+    height: 0;
+    margin-top: 5px;
+
+    content: '';
+    vertical-align: middle;
 
     border-top: 15px solid transparent;
-    border-right:10px solid #fff;
+    border-right: 10px solid #fff;
     border-bottom: 15px solid transparent;
-	position: absolute;
-	left: 28%;
-	margin-top: 5px;
 }
 
 
 
-.hottedHead{
-	margin-top: 20px;
+.hottedHead
+{
+    margin-top: 20px;
 }
-.weui_cell label{
-	padding-top: 5px;
+.weui_cell label
+{
+    padding-top: 5px;
 }
 
-#info-save-btn{
-	margin-top: 20px;
-	width: 50%;
+#info-save-btn
+{
+    width: 50%;
+    margin-top: 20px;
 }
-.copBtnTable{
-	width: 100%;
-	text-align: center;
-	margin: 0 auto;
-}
-.copBtnTable td{
-	background-color: #fff;
-	padding: 10px;
-}
-.copTable img{
-	float: left;
-	display: inline-block;
-	width: 20%;
-	max-width: 100px;
-	padding: 10px;
-}
-.copInfo{
-	float: left;
-	width: 60%;
-	padding-right: 10px;
-	vertical-align: middle;
-}
-.copInfo h1{
-	font-size: 16px;
-	font-weight: normal;
-	padding-top: 5px;
-}
-.copInfo span{
-	font-size: 12px;
-	color: #808080;
+.copBtnTable
+{
+    width: 100%;
+    margin: 0 auto;
 
+    text-align: center;
 }
-.copContainer{
-	position: relative;
-	margin: 0 auto;
-	width: 100%;
-	overflow: hidden;
-	background-color: #fff;
+.copBtnTable td
+{
+    padding: 10px;
+
+    background-color: #fff;
+}
+.copTable img
+{
+    display: inline-block;
+    float: left;
+
+    width: 20%;
+    max-width: 100px;
+    padding: 10px;
+}
+.copInfo
+{
+    float: left;
+
+    width: 60%;
+    padding-right: 10px;
+
+    vertical-align: middle;
+}
+.copInfo h1
+{
+    font-size: 16px;
+    font-weight: normal;
+
+    padding-top: 5px;
+}
+.copInfo span
+{
+    font-size: 12px;
+
+    color: #808080;
+}
+.copContainer
+{
+    position: relative;
+
+    overflow: hidden;
+
+    width: 100%;
+    margin: 0 auto;
+
+    background-color: #fff;
 }
 .copBtnTable tr td a,
 .copBtnTable tr td span
 {
-	color:#36E729;
+    color: #36e729;
 }
-.copTableItem{
-	width: 94%;
-	margin: 0 auto;
-	border: 1px solid #E6E6E6;
-	margin-bottom: 20px;
+.copTableItem
+{
+    width: 94%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+
+    border: 1px solid #e6e6e6;
 }
-.copTable{
-	margin-top: 10px;
+.copTable
+{
+    margin-top: 10px;
 }
 
-.rightBtn{
-	position: absolute;
-	right: 10px;
-	top: 48%;
-	color:#B3B3B3;
+.rightBtn
+{
+    position: absolute;
+    top: 48%;
+    right: 10px;
+
+    color: #b3b3b3;
 }
-#myChange .pointChangeBtn{
-	background-color: #fff;
-	margin-top: 2px;
-	line-height: 50px;
+#myChange .pointChangeBtn
+{
+    line-height: 50px;
+
+    margin-top: 2px;
+
+    background-color: #fff;
 }
 
 #mycardChangeBtn,
-#mythingChangeBtn{
-	text-align: center;
-	display: inline-block;
-	width: 48%;
+#mythingChangeBtn
+{
+    display: inline-block;
 
-}
-#mythingChangeBtn{
-	border-left: 3px solid #f7f7f7;
-}
+    width: 48%;
 
-#mythingChange{
-	display: none;
-	margin-top: 20px;
+    text-align: center;
 }
-#mycardChange{
-	display: block;
-	margin-top: 20px;
-}
-#alertWindow{
-	display: none;
-	z-index: 100;
-}
-#alertContent span{
-	display: inline-block;
-	font-size: 14px;
-	letter-spacing: 0.6em;
-	text-align: left;
-}
-#alertContent div{
-	text-align: left;
-	margin: 0 auto;
-	padding-left: 40px;
-	font-size: 13px;
-	line-height: 40px;
-}
-#alertContent img{
-	display: inline-block;
-	width: 70%;
-	text-align: center;
-}
-.select_id{
-	
-	padding-top: 3px;
-}
-.changeItemBox{
-	overflow: hidden;
-	position: relative;
-	margin-bottom: 10px;
-}
-.commonChange table{
-	width: 100%;
-	text-align: center;
-	padding: 10px;
-
+#mythingChangeBtn
+{
+    border-left: 3px solid #f7f7f7;
 }
 
-.changeItemBox{
-	border-radius: 10px;
-	box-shadow:1px 1px 1px #C1C1C1;
-}
-.changeItemBox .changeState{
-	float:left;
-	width: 10%;
-	height: 90px;
-	background-color: #ccc;
-	text-align: center;
-	padding-left: 3%;
-	padding-right: 3%;
-	padding-top: 2%;
-	
-}
-.changeItemBox .state{
-	 font-family:"Microsoft YaHei",微软雅黑,"MicrosoftJhengHei",华文细黑,STHeiti,MingLiu;
-	
-	
-}
-.changeItemBox .changeInfo{
-	float:left;
-	width: 83%;
-	height: 90px;
-	background-color: #fff;
-	padding-top: 2%;
-}
-.changeInfo .changeMoney{
-	float:left;
-	width: 30%;
-	text-align: center;
-}
-.changeInfo .changeMoney img{
-	width: 100%;
-	padding-top: 10px;
-}
-.changeInfo .changeMoney h2{
-	display: inline-block;
-	font-size: 14px;
-	font-weight: normal;
-}
-.changeInfo .changeMoney span{
-	font-size: 2em;
-}
-.changeInfo .changeMoney p{
-	
-	font-size: 0.7em;
-	line-height: 5px;
+#mythingChange
+{
+    display: none;
 
+    margin-top: 20px;
 }
-.changeInfo .changeTime{
-	float:left;
-	font-size:14px;
-	width: 60%;
-	text-align: left;
-	padding-top: 2%;
-	padding-left: 5%;
-	
-}
-.changeInfo .changeTime h1{
+#mycardChange
+{
+    display: block;
 
-	font-size: 20px;
-	font-weight: normal;
-
+    margin-top: 20px;
 }
-.changeInfo .changeTime span{
-	display: block;
-	font-size: 10px;
+#alertWindow
+{
+    z-index: 100;
 
+    display: none;
 }
-.changeInfo .changeTime .dialogInfo{
-	position: absolute;
-	right: 15px;
-	bottom: 5px;
-	
+#alertContent span
+{
+    font-size: 14px;
+
+    display: inline-block;
+
+    text-align: left;
+    letter-spacing: .6em;
+}
+#alertContent div
+{
+    font-size: 13px;
+    line-height: 40px;
+
+    margin: 0 auto;
+    padding-left: 40px;
+
+    text-align: left;
+}
+#alertContent img
+{
+    display: inline-block;
+
+    width: 70%;
+
+    text-align: center;
+}
+.select_id
+{
+    padding-top: 3px;
+}
+.changeItemBox
+{
+    position: relative;
+
+    overflow: hidden;
+
+    margin-bottom: 10px;
+}
+.commonChange table
+{
+    width: 100%;
+    padding: 10px;
+
+    text-align: center;
 }
 
+.changeItemBox
+{
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px #c1c1c1;
+}
+.changeItemBox .changeState
+{
+    float: left;
 
-.isUsed .state{
-	color: #FFFFFF;
+    width: 10%;
+    height: 90px;
+    padding-top: 2%;
+    padding-right: 3%;
+    padding-left: 3%;
+
+    text-align: center;
+
+    background-color: #ccc;
+}
+.changeItemBox .state
+{
+    font-family: 'Microsoft YaHei',微软雅黑,'MicrosoftJhengHei',华文细黑,STHeiti,MingLiu;
+}
+.changeItemBox .changeInfo
+{
+    float: left;
+
+    width: 83%;
+    height: 90px;
+    padding-top: 2%;
+
+    background-color: #fff;
+}
+.changeInfo .changeMoney
+{
+    float: left;
+
+    width: 30%;
+
+    text-align: center;
+}
+.changeInfo .changeMoney img
+{
+    width: 100%;
+    padding-top: 10px;
+}
+.changeInfo .changeMoney h2
+{
+    font-size: 14px;
+    font-weight: normal;
+
+    display: inline-block;
+}
+.changeInfo .changeMoney span
+{
+    font-size: 2em;
+}
+.changeInfo .changeMoney p
+{
+    font-size: .7em;
+    line-height: 5px;
+}
+.changeInfo .changeTime
+{
+    font-size: 14px;
+
+    float: left;
+
+    width: 60%;
+    padding-top: 2%;
+    padding-left: 5%;
+
+    text-align: left;
+}
+.changeInfo .changeTime h1
+{
+    font-size: 20px;
+    font-weight: normal;
+}
+.changeInfo .changeTime span
+{
+    font-size: 10px;
+
+    display: block;
+}
+.changeInfo .changeTime .dialogInfo
+{
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+}
+
+
+.isUsed .state
+{
+    color: #fff;
 }
 .isUsed span,
 .isUsed .dialogInfo,
-.isUsed p ,
-.isUsed h2,.isUsed h1{
-	color:#ccc;
+.isUsed p,
+.isUsed h2,
+.isUsed h1
+{
+    color: #ccc;
 }
-.isNew .state{
-	color: #FFFFFF;
+.isNew .state
+{
+    color: #fff;
 }
 .isNew span,
 .isNew .dialogInfo,
-.isNew p ,
-.isNew h2,.isNew h1{
-	color:#333333;
+.isNew p,
+.isNew h2,
+.isNew h1
+{
+    color: #333;
 }
-.isNew .changeState{
-	background-color: #00D104;
+.isNew .changeState
+{
+    background-color: #00d104;
 }
 
-.isTimeOut .state{
-	color: #FFFFFF;
+.isTimeOut .state
+{
+    color: #fff;
 }
 .isTimeOut span,
 .isTimeOut .dialogInfo,
-.isTimeOut p ,
-.isTimeOut h2,.isTimeOut h1{
-	color:#ccc;
+.isTimeOut p,
+.isTimeOut h2,
+.isTimeOut h1
+{
+    color: #ccc;
 }
-.isTimeOut .changeState{
-	background-color: #DD6F00;
+.isTimeOut .changeState
+{
+    background-color: #dd6f00;
 }
 
 
-.circleLeft{
-	position: absolute;
-	background-color: #f9f9f9;
-	height: 15px;
-	width: 15px;
-	border-radius: 50%;
-	top:50%;
-	margin-top: -7.5px;
-	left:-7.5px;
-	z-index: 2;
+.circleLeft
+{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: -7.5px;
+
+    width: 15px;
+    height: 15px;
+    margin-top: -7.5px;
+
+    border-radius: 50%;
+    background-color: #f9f9f9;
 }
-.circleRight{
-	position: absolute;
-	background-color: #f9f9f9;
-	height: 15px;
-	width: 15px;
-	border-radius: 50%;
-	top:50%;
-	margin-top: -7.5px;
-	right:-3px;
-	z-index: 2;
+.circleRight
+{
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    right: -3px;
+
+    width: 15px;
+    height: 15px;
+    margin-top: -7.5px;
+
+    border-radius: 50%;
+    background-color: #f9f9f9;
 }
-.ususalChange table tr td{
-	width: 49%;
-	background-color: #fff;
+.ususalChange table tr td
+{
+    width: 49%;
+
+    background-color: #fff;
 }
-.ususalChange table tr td img{
-	display: inline-block;
-	width: 90%;
-	padding-top: 10px;
+.ususalChange table tr td img
+{
+    display: inline-block;
+
+    width: 90%;
+    padding-top: 10px;
 }
-#changeDesc {
-	padding: 10px 0px;
+#changeDesc
+{
+    padding: 10px 0;
 }
 #changeDesc img,
 #changeDesc h1,
 #changeDesc h3,
 #changeDesc h2,
 #changeDesc p,
-#changeDesc div{
-	padding-left: 10px;
-	padding-right: 10px;
+#changeDesc div
+{
+    padding-right: 10px;
+    padding-left: 10px;
 }
-#changeDesc img{
-	display: block;
-	width: 100%;
-	height: 150px;
+#changeDesc img
+{
+    display: block;
 
+    width: 100%;
+    height: 150px;
 }
-#goodTitle{
+#goodTitle
+{
+    font-size: 20px;
+    font-weight: normal;
 
-	font-size: 20px;
-	font-weight: normal;
-	color: #59B4C1;
-	padding-top: 10px;
-	padding-bottom: 10px;
-}
-#goodNeedPoints{
-	font-size: 16px;
-	font-weight: normal;
-}
+    padding-top: 10px;
+    padding-bottom: 10px;
 
-#changeDesc h2{
-	padding-top: 20px;
-	font-size: 18px;
-	padding-bottom: 10px;
+    color: #59b4c1;
 }
-#changeDesc p{
-	font-size: 14px;
-	color:#808080;
+#goodNeedPoints
+{
+    font-size: 16px;
+    font-weight: normal;
 }
 
-.otherInfoTitle{
-	padding-top: 10px;
-	padding-bottom: 10px;
+#changeDesc h2
+{
+    font-size: 18px;
+
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+#changeDesc p
+{
+    font-size: 14px;
+
+    color: #808080;
 }
 
-.imChange{
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	background-color: #fff;
-	height: 90px;
-	width: 100%;
-	text-align: center;
-}
-.imChange p{
-	padding-top: 10px;
-	padding-bottom: 10px;
+.otherInfoTitle
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-#lookOutInfo{
-	margin-bottom: 150px;
-}
-#imChangeBtn{
-	display: inline-block;
-	padding:5px;
-	color: #FFFFFF;
-	background-color: #20A8FF;
-	width: 80%;
-	border-radius: 5px;
-}
+.imChange
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
 
-#cancelBtn{
-	color: #7F7F7F;
-	border-right: 2px solid #E6E6E6;
-}
-.weui_btn_dialog{
-	border-top: 2px solid #E6E6E6;
-}
+    width: 100%;
+    height: 90px;
 
-#alertWindowChange{
-	display: none;
+    text-align: center;
+
+    background-color: #fff;
+}
+.imChange p
+{
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
+#lookOutInfo
+{
+    margin-bottom: 150px;
+}
+#imChangeBtn
+{
+    display: inline-block;
+
+    width: 80%;
+    padding: 5px;
+
+    color: #fff;
+    border-radius: 5px;
+    background-color: #20a8ff;
+}
+
+#cancelBtn
+{
+    color: #7f7f7f;
+    border-right: 2px solid #e6e6e6;
+}
+.weui_btn_dialog
+{
+    border-top: 2px solid #e6e6e6;
+}
+
+#alertWindowChange
+{
+    display: none;
+}
 
 
+#adBarLineList
+{
+    font: 12px verdana;
+	margin-top: 20px;
+    padding-bottom: 13px;
+}
+#adBarLineList li span
+{
+    background: #fbfbfb;
+}
+#adBarLineList li
+{
+    float: left;
 
+    width: 100%;
+    height: 30px;
 
+    border: 0 solid #6c6;
+}
+#adBarLineList .adBarLineL
+{
+    width: 100%;
+    margin-bottom: -15px;
 
+    border-bottom: 1px solid #E6E6E6;
+}
+#adBarLineList a
+{
+    display: block;
+
+    width: 100%;
+    padding: 6px 5px;
+	font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+
+    color: #666;
+}

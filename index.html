@@ -112,13 +112,13 @@
 	        <div class="weui_cell">
 	            <div class="weui_cell_hd" ><label class="weui_label" >积分卡号</label></div>
 	            <div class="weui_cell_bd weui_cell_primary">
-	                <input data-role='none' class="weui_input" type="text" placeholder="请输入积分卡号"/>
+	                <input data-role='none' class="weui_input" type="number" pattern="[0-9]{12}" placeholder="请输入积分卡号"/>
 	            </div>
 	        </div>	
 	        <div class="weui_cell">
 	            <div class="weui_cell_hd"><label class="weui_label">积分密码</label></div>
 	            <div class="weui_cell_bd weui_cell_primary">
-	                <input data-role='none' class="weui_input" type="password" placeholder="请输入积分密码"/>
+	                <input data-role='none' class="weui_input" type="password" pattern="[a-zA-Z0-9]*"placeholder="请输入积分密码"/>
 	            </div>
 	        </div>
 			
@@ -139,18 +139,32 @@
 	</div><!-- 积分充值 end -->
 
 	<div data-role="page" id="vipCard" >
-		<div class="weui_cells_title">会员卡号</div>
 		<div class="upbackground">
-			<p class="vipCodeNum">608080091</p>
+			<div class="weui_cells_title">会员卡号</div>
 			
-			<img src="images/vipCode.jpg" alt="会员卡条形码" class="vipCodePic">
+				<p class="vipCodeNum">608080091</p>
+				
+				<img src="images/vipCode.jpg" alt="会员卡条形码" class="vipCodePic">
 			
-			<img src="images/vipBarCode.jpg" alt="付款二维码" class="vipBinCodePic">
+			<!-- <img src="images/vipBarCode.jpg" alt="付款二维码" class="vipBinCodePic"> -->
+			
 			
 		</div>
 		
 
-		<img src="images/ad.jpg" alt="广告位图片" class="adPic">
+		<ul id="adBarLineList">
+			<li class="adBarLineL"></li>
+			<li class="adBarLineR"><a href=""><span>广告</span></a></li>
+		</ul>
+		
+		<div class="adContainer">
+
+			<img src="images/shop_2.jpg" alt="广告位图片" class="adPic">
+			<span>广告标题</span>
+			<p>广告内容Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate placeatn</p>
+			<div class="tips">活动推广</div> 
+		</div>
+		
 	</div><!-- 会员卡号 end -->
 
 	<div data-role="page" id="myPoint" >
@@ -164,7 +178,7 @@
 		    <section>
 		        <h2 class="title"></h2>
 		        <section>
-		            <img src="images/vipBarCode.jpg" alt="付款二维码">
+		            <img src="images/vipCode.jpg" alt="付款条形码">
 		        </section>
 		    </section>
 
@@ -202,10 +216,12 @@
 		<div class="pointChangeBtn">
 			
 			<a  href="#cardChange" id="cardChangeBtn">
-				<img src="images/shop.jpg" alt="icon">卡券兑换
+				<img src="images/cardIcon.jpg" alt="icon">
+				<p>卡券兑换</p>
 			</a>
 			<a  href="#thingChange" id="thingChangeBtn">
-				<img src="images/shop.jpg" alt="icon">实物兑换
+				<img src="images/thingIcon.jpg" alt="icon">
+				<p>实物兑换</p>
 			</a>
 		</div>
 		
