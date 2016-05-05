@@ -8,9 +8,11 @@
 	<link rel="stylesheet" href="style/jquery.mobile-1.4.5.css">
 	<link rel="stylesheet" href="style/weui.css">
 	<link rel="stylesheet" href="style/style.css">
+	<!-- <link rel="stylesheet" href="style/jquery-ui/jquery-ui.css"> -->
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<script src="js/jquery.mobile-1.4.5.js"></script>
 	<script src="js/main.js"></script>
+	<!-- <script src="js/jquery-ui.js"></script> -->
 	<!-- 引入 jQuery Mobile 样式 -->
 	<!-- <link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
 
@@ -60,6 +62,17 @@
 			        </div>
 			        <div class="weui_cell_bd weui_cell_primary middle-title">
 			            <p>积分商城</p>
+			        </div>
+			        <div class="weui_cell_ft">				          
+			        </div>
+		   		</a>
+
+		   		<a class="weui_cell" href="#dailyCheckPage">
+			        <div class="weui_cell_hd">
+			            <img src="images/shop.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
+			        </div>
+			        <div class="weui_cell_bd weui_cell_primary middle-title">
+			            <p>每日签到</p>
 			        </div>
 			        <div class="weui_cell_ft">				          
 			        </div>
@@ -915,6 +928,14 @@
 	      
 	    </div>
 	</div>
+
+	<div data-role="page" class="weui_msg" id="dailyCheckPage">
+		<div class="weui_cells_title " id="dailyTitle">逅续积分计划签到活动<span id="titleMonth">5</span>月份</div>
+		<div id="calendar"></div>
+
+
+	</div>
+
 
 </body>
 	
