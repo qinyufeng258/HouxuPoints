@@ -386,6 +386,7 @@ window.onload = function(){
 		changePageTag = 2;//弹出页面点击确认后跳转到主页
 		var personName = $("#person-name").val();
       	var personBirth = $("#person-birth").val();
+      	alert(personBirth);
       	var personTel = $("#person-tel").val();		
       	var personIdenti = $("#person-identi").get(0).selectedIndex;
       	var personAddr = $("#person-addr").val();
