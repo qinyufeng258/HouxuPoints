@@ -1,6 +1,8 @@
 window.onload = function(){
 
 	//var mtc = document.getElementById("mycardChange");
+	var changePageTag = 0;//UPDATE:2016年05月23日
+	var cardNo = document.getElementById("vip-card-id").value;
 	var mtc = $("#mycardChange");
 	var mcc = document.getElementById("mythingChange");
 	//var mcc = $("#mythingChange");
@@ -74,10 +76,15 @@ window.onload = function(){
  			document.getElementById("alertTitle").innerHTML = ""
 			document.getElementById("alertContent").innerHTML = "";
 
-			var myPoint = 0;
+			var myPoint = 100;
 			if(myPoint >-90){
+				$("#changeRightPage .weui_msg_title").html("兑换成功");//UPDATE:2016年05月23日
+				$("#changeRightPage .weui_msg_desc").html("请在积分商城-兑换记录里查看");//UPDATE:2016年05月23日
+				
 				$.mobile.changePage ($("#changeRightPage"), 'fade');
 			}else{
+				$("#changeWrongPage .weui_msg_title").html("兑换失败");//UPDATE:2016年05月23日
+				$("#changeWrongPage .weui_msg_desc").html("积分不足 或 库存不足");//UPDATE:2016年05月23日
 				$.mobile.changePage ($("#changeWrongPage"), 'fade');
 			}
 			
@@ -88,12 +95,30 @@ window.onload = function(){
 
 	$("#backToHome").on("tap",function(){
 
-		$.mobile.changePage ('index.html', 'fade');
+		if(changePageTag == 0){
+			$.mobile.changePage ($("#myChange"), 'fade');
+		}
+		else if(changePageTag == 1){
+			$.mobile.changePage ($("#myHome"), 'fade');
+		}
+		else if(changePageTag == 2){
+			$.mobile.changePage ($("#personalInfo"), 'fade');
+		}
+		
 	});
 
 	$("#backToHome2").on("tap",function(){
 
-		$.mobile.changePage ('index.html', 'fade');
+		if(changePageTag == 0){
+			$.mobile.changePage ($("#myChange"), 'fade');
+		}
+		else if(changePageTag == 1){
+			$.mobile.changePage ($("#myHome"), 'fade');
+		}
+		else if(changePageTag == 2){
+			$.mobile.changePage ($("#personalInfo"), 'fade');
+		}
+		
 	});
 
 	$("#imChangeBtn").on("tap",function(){
@@ -181,6 +206,28 @@ window.onload = function(){
 	});
 	
 
+	
+   $("#pointCardName").on("blur",function(){
+   		//console.log($("input[name='pointCardName']").val());
+   		var inputValue = $("input[name='pointCardName']").val();
+   		if(!checkName(inputValue)){
+   			$("#errorTipsName").html("<div style='padding:14px;font-size:12px; color:#DD0001;'>输入格式不合法，请输入12位数字</div>");
+   		}
+   		else{
+   			$("#errorTipsName").html("");
+   		}
+   });
+
+   $("#pointCardPwd").on("blur",function(){
+   		//console.log($("input[name='pointCardPwd']").val());
+   		var inputValue = $("input[name='pointCardPwd']").val();
+   		if(!checkPwd(inputValue)){
+   			$("#errorTipsPwd").html("<div style='padding:14px;font-size:12px; color:#DD0001;'>输入格式不合法，请输入12位数字和字母混合</div>");
+   		}
+   		else{
+   			$("#errorTipsPwd").html("");
+   		}
+   });
 	// EventUtil.addHandler(mtc, "click", function(event){
 
 	// 	//统一事件处理程序
@@ -248,9 +295,157 @@ window.onload = function(){
 	// });
 
 	//添加签到日历
-	$("#calendar").dateCheckIn();
+	//$("#calendar").dateCheckIn();
+
+	//UPDATE:2016年05月23日
+
+	$("#point-pay-btn").on("tap",function(){
+
+		changePageTag = 1;//弹出页面点击确认后跳转到主页
+		
+		var pointCardNo = document.getElementById("pointCardName").value;
+		var pointCardPwd = document.getElementById("pointCardPwd").value;
+		var md5pwd = $.md5(pointCardPwd);
+		var aj = $.ajax( {  
+		    url:'http://www.whuahuw.com/wechat/wwb.do',
+		    data:{  
+		        MTYPE:"1200",
+		        MCODE:"1001",
+		        CARD_NO:cardNo,
+		        POINTS_CARD_NO:pointCardNo,
+		        POINTS_PASSWORD:md5pwd
+		    },  
+		    type:'post',  
+		    cache:false,  
+		    dataType:'json',
+		    async:true,
+		    contentType: "application/x-www-form-urlencoded; charset=utf-8",
+		    success:function(data) {  
+		        //todo
+		        if(data.RESP_STATUS == "S"){
+		            //交易成功
+		            //alert(data.NEW_POINTS);
+		            $("#changeRightPage .weui_msg_title").html("充值成功");
+					$("#changeRightPage .weui_msg_desc").html("充值后积分为:" + data.NEW_POINTS);
+		            $.mobile.changePage ($("#changeRightPage"), 'fade');
+
+		        }
+		        else if(data.RESP_STATUS == "F"){
+		            //alert(data.RESP_MSG);
+		            $("#changeWrongPage .weui_msg_title").html("充值失败");
+					$("#changeWrongPage .weui_msg_desc").html("错误信息：" + data.RESP_MSG);
+		            $.mobile.changePage ($("#changeWrongPage"), 'fade');
+		        }
+		    },  
+		     error : function(XMLHttpRequest, textStatus, errorThrown) {  
+		          // view("异常！");  
+		          $("#changeWrongPage .weui_msg_title").html("异常");
+				  $("#changeWrongPage .weui_msg_desc").html(textStatus);
+		          $.mobile.changePage ($("#changeWrongPage"), 'fade');
+		    }  
+		});
+
+	});
+
+	// $("#person-name").val("萨asdasd迪");
+ //  	$("#person-birth").val("19941224");
+ //  	$("#person-tel").val("1392139103");		
+ //  	$("#person-identi").get(0).selectedIndex = "3";
+ //  	$("#person-addr").val("asdasds123123adsadasd");
+
+	个人信息页面填充：页面加载完成后异步触发，填充页面
+	var personAj = $.ajax( {  
+	    url:'http://www.whuahuw.com/wechat/wwb.do',
+	    data:{  
+	        MTYPE:"1200",
+	        MCODE:"1002",
+	        MEMBER_CARD_NO:cardNo
+	    },  
+	    type:'get',  
+	    cache:false,  
+	    dataType:'json',
+	    async:true,
+	    contentType: "application/x-www-form-urlencoded; charset=utf-8",
+	    success:function(data) {  
+	        //todo
+	      	$("#person-name").val(data.USER_NAME);
+	      	$("#person-birth").val(data.BRITHDAY);
+	      	$("#person-tel").val(data.PHONE);		
+	      	$("#person-identi").get(0).selectedIndex = data.IDETITY;
+	      	$("#person-addr").val(data.RECEIPT_ADDRESS);
+	    },  
+	    error : function(XMLHttpRequest, textStatus, errorThrown) {  
+	          // view("异常！");  
+	         alert("异常");
+	    }  
+	});
+
+	$("#info-save-btn").on("tap",function(){
+
+		changePageTag = 2;//弹出页面点击确认后跳转到主页
+		var personName = $("#person-name").val();
+      	var personBirth = $("#person-birth").val();
+      	var personTel = $("#person-tel").val();		
+      	var personIdenti = $("#person-identi").get(0).selectedIndex;
+      	var personAddr = $("#person-addr").val();
+      	//console.log(personName + personBirth + personTel + personIdenti+ personAddr);
+		var aj = $.ajax( {  
+		    url:'http://www.whuahuw.com/wechat/wwb.do',
+		    data:{  
+		        MTYPE:"1200",
+		        MCODE:"1001",
+		        MEMBER_CARD_NO:cardNo,
+		        USER_NAME:personName,
+		        BRITHDAY:personBirth,
+		        PHONE:personTel,
+		        IDENTITY:personIdenti,
+		        RECEIPT_ADDRESS:personAddr
+		    },  
+		    type:'post',  
+		    cache:false,  
+		    dataType:'json',
+		    async:true,
+		    contentType: "application/x-www-form-urlencoded; charset=utf-8",
+		    success:function(data) {  
+		        //todo
+				$("#changeRightPage .weui_msg_title").html("修改成功");
+				$("#changeRightPage .weui_msg_desc").html(data.RESP_MSG);
+	            $.mobile.changePage ($("#changeRightPage"), 'fade');
+		    },  
+		     error : function(XMLHttpRequest, textStatus, errorThrown) {  
+		          $("#changeWrongPage .weui_msg_title").html("异常");
+				$("#changeWrongPage .weui_msg_desc").html(textStatus);
+	            $.mobile.changePage ($("#changeWrongPage"), 'fade');
+		    }  
+		});
+
+	});
+	//UPDATE END
 
 }
+
+function checkName(s){
+
+    if(s!=null){
+        var r,re;
+        re = /\d{12}/i; //\d表示数字,*表示匹配多个数字
+        r = s.match(re);
+        return (r==s)?true:false;
+    }
+    return false;
+}
+function checkPwd(s){
+
+    if(s!=null){
+        var r,re;
+        re = /[0-9A-Za-z]{12}/i; //\d表示数字,*表示匹配多个数字
+        r = s.match(re);
+        return (r==s)?true:false;
+    }
+    return false;
+}
+
+
 var checkPostData = {
 	jsonid:"time-2015-05",
 	date:"1",

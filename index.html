@@ -12,6 +12,11 @@
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<script src="js/jquery.mobile-1.4.5.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/md5.js"></script>
+
+<!-- 	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/messages_zh.js"></script> -->
+
 	<!-- <script src="js/jquery-ui.js"></script> -->
 	<!-- 引入 jQuery Mobile 样式 -->
 	<!-- <link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
@@ -32,6 +37,7 @@
 			  			<a id="vipCardLink" href="#vipCard" data-transition="slidefade" >
 				  			<h4>会员卡号</h4>
 				  			<p id="vip-card-id">608080091</p>
+				  			
 			  			</a>
 			  		</div>
 			  		<div class="vip-right">
@@ -67,7 +73,7 @@
 			        </div>
 		   		</a>
 
-		   		<a class="weui_cell" href="#dailyCheckPage">
+		   		<!-- <a class="weui_cell" href="#dailyCheckPage">
 			        <div class="weui_cell_hd">
 			            <img src="images/shop.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
 			        </div>
@@ -76,7 +82,7 @@
 			        </div>
 			        <div class="weui_cell_ft">				          
 			        </div>
-		   		</a>
+		   		</a> -->
 		   		
 			</div>
 	  	</div><!-- 积分信息 end -->
@@ -122,19 +128,22 @@
 		</div>
 
 		<div class="weui_cells weui_cells_form" >
-	        <div class="weui_cell">
+	        <div class="weui_cell" id="pointNameContainer">
 	            <div class="weui_cell_hd" ><label class="weui_label" >积分卡号</label></div>
 	            <div class="weui_cell_bd weui_cell_primary">
-	                <input data-role='none' class="weui_input" type="number" pattern="[0-9]{12}" placeholder="请输入积分卡号"/>
+	                <input data-role='none' class="weui_input" type="number" placeholder="请输入积分卡号" id="pointCardName" name="pointCardName"/>
+
 	            </div>
+
 	        </div>	
+	         <div id="errorTipsName"></div>
 	        <div class="weui_cell">
 	            <div class="weui_cell_hd"><label class="weui_label">积分密码</label></div>
 	            <div class="weui_cell_bd weui_cell_primary">
-	                <input data-role='none' class="weui_input" type="password" pattern="[a-zA-Z0-9]*"placeholder="请输入积分密码"/>
+	                <input data-role='none' class="weui_input" type="password" placeholder="请输入积分密码" id="pointCardPwd" name="pointCardPwd"/>
 	            </div>
 	        </div>
-			
+			<div id="errorTipsPwd"></div>
 	        
    		 </div>
 
@@ -664,14 +673,14 @@
 	        <div class="weui_cell">
 	            <div class="weui_cell_hd"><label class="weui_label">姓名</label></div>
 	            <div class="weui_cell_bd weui_cell_primary">
-	                <input class="weui_input"  data-role='none' type="text" placeholder="请填写姓名"/>
+	                <input class="weui_input"  data-role='none' type="text" id="person-name" placeholder="请填写姓名"/>
 	            </div>
 	        </div>
 
 	        <div class="weui_cell">
 	            <div class="weui_cell_hd"><label for="" class="weui_label">生日</label></div>
 	            <div class="weui_cell_bd weui_cell_primary">
-	                <input class="weui_input" data-role='none' type="date" placeholder="请输入生日" value=""/>
+	                <input class="weui_input" data-role='none' id="person-birth" type="date" placeholder="请输入生日" value=""/>
 	            </div>
         	</div>
 
@@ -679,7 +688,7 @@
 			<div class="weui_cell">
 	            <div class="weui_cell_hd"><label for="" class="weui_label">手机</label></div>
 	            <div class="weui_cell_bd weui_cell_primary">
-	                <input class="weui_input" data-role='none' type="number" pattern="[0-9]*" placeholder="请输入号码" value=""/>
+	                <input class="weui_input" data-role='none' type="number" id="person-tel" pattern="[0-9]*" placeholder="请输入号码" value=""/>
 	            </div>
         	</div>
 			
@@ -687,7 +696,7 @@
 			<div class="weui_cell weui_cell_select weui_select_after">
 	           <div class="weui_cell_hd"><label for="" class="weui_label">身份</label></div>
 	            <div class="weui_cell_bd weui_cell_primary select_id" >
-	                <select class="weui_select" name="select2" data-role='none'>
+	                <select class="weui_select" name="select2" data-role='none' id="person-identi">
 	                    <option value="1">我是帅哥</option>
 	                    <option value="2">我是美女</option>
 	                    <option value="3">我是帅哥（学生）</option>
@@ -699,7 +708,7 @@
 			<div class="weui_cell">
 	            <div class="weui_cell_hd"><label for="" class="weui_label">收货地址</label></div>
 	            <div class="weui_cell_bd weui_cell_primary">
-	                <input class="weui_input" data-role='none' type="text"  placeholder="请输入收货地址" value=""/>
+	                <input class="weui_input" data-role='none' type="text" id="person-addr" placeholder="请输入收货地址" value=""/>
 	            </div>
         	</div>
 			
@@ -929,13 +938,13 @@
 	    </div>
 	</div>
 
-	<div data-role="page" class="weui_msg" id="dailyCheckPage">
+	<!-- <div data-role="page" class="weui_msg" id="dailyCheckPage">
 		<div class="weui_cells_title " id="dailyTitle">逅续积分计划签到活动<span id="titleMonth">5</span>月份</div>
 		<div id="calendar"></div>
 
 
 	</div>
-
+ -->
 
 </body>
 	
