@@ -2,7 +2,7 @@ window.onload = function(){
 
 	//var mtc = document.getElementById("mycardChange");
 	var changePageTag = 0;//UPDATE:2016年05月23日
-	var cardNo = document.getElementById("vip-card-id").value;
+	var cardNo = document.getElementById("vip-card-id").innerHTML;
 	var mtc = $("#mycardChange");
 	var mcc = document.getElementById("mythingChange");
 	//var mcc = $("#mythingChange");
@@ -302,9 +302,10 @@ window.onload = function(){
 	$("#point-pay-btn").on("tap",function(){
 
 		changePageTag = 1;//弹出页面点击确认后跳转到主页
-		
+		alert(cardNo);
 		var pointCardNo = document.getElementById("pointCardName").value;
 		var pointCardPwd = document.getElementById("pointCardPwd").value;
+		console.log(pointCardNo);
 		var md5pwd = $.md5(pointCardPwd);
 		var aj = $.ajax( {  
 		    url:'http://www.whuahuw.com/wechat/wwb.do',
@@ -347,38 +348,38 @@ window.onload = function(){
 
 	});
 
-	// $("#person-name").val("萨asdasd迪");
- //  	$("#person-birth").val("19941224");
- //  	$("#person-tel").val("1392139103");		
- //  	$("#person-identi").get(0).selectedIndex = "3";
- //  	$("#person-addr").val("asdasds123123adsadasd");
+	$("#person-name").val("萨asdasd迪");
+  	$("#person-birth").val("2013-04-03");
+  	$("#person-tel").val("1392139103");		
+  	$("#person-identi").get(0).selectedIndex = "3";
+  	$("#person-addr").val("asdasds123123adsadasd");
 
-	个人信息页面填充：页面加载完成后异步触发，填充页面
-	var personAj = $.ajax( {  
-	    url:'http://www.whuahuw.com/wechat/wwb.do',
-	    data:{  
-	        MTYPE:"1200",
-	        MCODE:"1002",
-	        MEMBER_CARD_NO:cardNo
-	    },  
-	    type:'get',  
-	    cache:false,  
-	    dataType:'json',
-	    async:true,
-	    contentType: "application/x-www-form-urlencoded; charset=utf-8",
-	    success:function(data) {  
-	        //todo
-	      	$("#person-name").val(data.USER_NAME);
-	      	$("#person-birth").val(data.BRITHDAY);
-	      	$("#person-tel").val(data.PHONE);		
-	      	$("#person-identi").get(0).selectedIndex = data.IDETITY;
-	      	$("#person-addr").val(data.RECEIPT_ADDRESS);
-	    },  
-	    error : function(XMLHttpRequest, textStatus, errorThrown) {  
-	          // view("异常！");  
-	         alert("异常");
-	    }  
-	});
+	//个人信息页面填充：页面加载完成后异步触发，填充页面
+	// var personAj = $.ajax( {  
+	//     url:'http://www.whuahuw.com/wechat/wwb.do',
+	//     data:{  
+	//         MTYPE:"1200",
+	//         MCODE:"1002",
+	//         MEMBER_CARD_NO:cardNo
+	//     },  
+	//     type:'get',  
+	//     cache:false,  
+	//     dataType:'json',
+	//     async:true,
+	//     contentType: "application/x-www-form-urlencoded; charset=utf-8",
+	//     success:function(data) {  
+	//         //todo
+	//       	$("#person-name").val(data.USER_NAME);
+	//       	$("#person-birth").val("1995/12/24");
+	//       	$("#person-tel").val(data.PHONE);		
+	//       	$("#person-identi").get(0).selectedIndex = data.IDETITY;
+	//       	$("#person-addr").val(data.RECEIPT_ADDRESS);
+	//     },  
+	//     error : function(XMLHttpRequest, textStatus, errorThrown) {  
+	//           // view("异常！");  
+	//          alert("异常");
+	//     }  
+	// });
 
 	$("#info-save-btn").on("tap",function(){
 
