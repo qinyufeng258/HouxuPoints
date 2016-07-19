@@ -93,7 +93,7 @@
 }
 #mypoint
 {
-    padding-top: 20px;
+   
 }
 .point-pay-info
 {
@@ -209,13 +209,25 @@
 }
 #myPoint .upbackground
 {
-    margin: 20px;
-    margin-top: 10px;
+    height: 160px;
+    
 
-    text-align: center;
-
-    background-color: #fff;
-    box-shadow: 2px 2px 3px #999;
+    background:url(../images/mypointbg.jpg) no-repeat;
+}
+#myPoint .upbackground .up-title{
+    padding-top: -10px;
+    color: #fff;
+    opacity: 0.7;
+    padding-left: 10px;
+    padding-top: 5px;
+    display: inline-block;
+}
+#myPoint .upbackground .up-point{
+    color: #fff;
+    position: absolute;
+    right: 10px;
+    top:50px;
+    font-size: 30px;
 }
 #myPoint article div
 {
@@ -434,13 +446,15 @@
     font-size: 16px;
     font-weight: normal;
 
-    padding-top: 5px;
+    padding-top: 10px;
 }
 .copInfo span
 {
+    display: inline-block;
     font-size: 12px;
-
-    color: #808080;
+    margin-top: 10px;
+    color: #FF8000;
+   
 }
 .copContainer
 {
@@ -462,7 +476,7 @@
 {
     width: 94%;
     margin: 0 auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 
     border: 1px solid #e6e6e6;
 }
@@ -471,14 +485,7 @@
     margin-top: 10px;
 }
 
-.rightBtn
-{
-    position: absolute;
-    top: 48%;
-    right: 10px;
 
-    color: #b3b3b3;
-}
 #myChange .pointChangeBtn
 {
     line-height: 50px;
@@ -540,6 +547,73 @@
     text-align: left;
 }
 #alertContent img
+{
+    display: inline-block;
+
+    width: 70%;
+
+    text-align: center;
+}
+#alertWindow2
+{
+    z-index: 100;
+
+    display: none;
+}
+#alertContent2 span
+{
+    font-size: 14px;
+
+    display: inline-block;
+
+    text-align: left;
+    letter-spacing: .6em;
+}
+#alertContent2 div
+{
+    font-size: 13px;
+    line-height: 40px;
+
+    margin: 0 auto;
+    padding-left: 40px;
+
+    text-align: left;
+}
+#alertContent2 img
+{
+    display: inline-block;
+
+    width: 70%;
+
+    text-align: center;
+}
+
+#alertWindow3
+{
+    z-index: 100;
+
+    display: none;
+}
+#alertContent3 span
+{
+    font-size: 14px;
+
+    display: inline-block;
+
+    text-align: left;
+    letter-spacing: .6em;
+}
+#alertContent3 div
+{
+    font-size: 13px;
+    line-height: 40px;
+
+    margin: 0 auto;
+    padding-left: 40px;
+
+    text-align: left;
+}
+#alertContent3 img
 {
     display: inline-block;
 
@@ -894,117 +968,171 @@
 
     color: #666;
 }
+.IdenImg{
+    width: 80px;
+  
+
+}
+#pointCardIden{
+    width: 50%;
+
+}
 
 
-
-/*签到表CSS*/
-#checkInTable{
+.point-use{
     background-color: #fff;
-    width: 100%;
-    height: 350px;
-    margin: 0 auto;
-    border-collapse:collapse;
-    border:none;
+    margin: 10px 20px;
+    height: 120px;
     position: relative;
-    margin-top: 35px;
+    padding-left: 10px;
 }
-
-#checkInTable thead{
-   
-    
+.point-use .use-time{
+    display: block;
+    padding-top: 5px;
+   border-bottom: 1px solid #ccc;
+   opacity: 0.7;
 }
-#checkInTable tbody{
-
+.point-use .use-shop{
+    display: block;
+    line-height: 80px;
+    font-size: 17px;
+    color:#001D3B;
 }
-.checkInRows{
-    margin-top: 40px;
-}
-.checkInItems{
-    width: 14%;
-    height: 60px;
-    border: 1px solid #E6E6E6;
-}
-
-#tableTitle{
+.point-use .use-point{
     position: absolute;
-    display: block;
-    width: 100%;
-    top: 37px;
-    z-index: 100;
-    background-color: #fff;
-    padding-top: 3px;
-    height: 26px;
-}
-#tableTitle #tableYear{
+    right: 10px;
+    top: 47%;
+    font-size: 17px;
+    color:#FF0000;
 
-    width: 60%;
-    display: inline-block;
 }
-#tableTitle a{
-    width: 20%;
-    display: inline-block;
+
+@media screen and (max-width: 270px) {
+    .point-use .use-point{
+        display: block;
+        font-size: 17px;
+        color:red;
+        position: static;
+
+    }
+    .point-use .use-shop{
+        display: block;
+        line-height: 40px;
+        font-size: 17px;
+        color:#001D3B;
+    }
+
 }
-.checkImg{
-    display: block;
-    width: 30px;
-    height: 30px;
+
+.classBar{
+    width: 94%;
     margin: 0 auto;
-}
+    margin-bottom: 10px;
 
-
-
-.checkLogo{
-    padding-top: 10px;
-    display: block;
-    width: 70px;
-    height: 70px;
-    margin: 0 auto;
-}
-
-#checkMiddle{
-    display: none;
-}
-#checkAfter{
-    display: none;
-}
-#dailyTitle{
-    margin-top:-30px;
-    margin-bottom: 5px;
-    font-size: 16px;
-}
-
-#checkInfo{
-    margin-top: 20px;
-    text-align: left;
-    padding: 5px 10px;
-}
-#infoTitle{
-    color:#C3C3C3;
     
 }
-#checkBefore{
-   color:#A3A3A3;
-   font-size: 13px;
+.classBar ul{
+    overflow: hidden;
 }
-#logoTable{
-    width: 100%;
-}
-#logoRow{
-    width: 100%;
-}
-#logoRow td{
+.classBar li{
+    list-style: none;
+    display: inline-block;
+    width: 23%;
+    height: 30px;
+    line-height: 30px;
     text-align: center;
+   
+   
 }
-#logoRow td a{
-    font-size: 14px;
-    background-color: #fff;
-    color:#3576BD;
-    border: 1px solid #04BE02;
-    padding: 3px 5px;
-    border-radius: 5px;
+.classBar li a{
+    display: inline-block;
+    width: 100%;
+
 }
-#checkAfter{
-    color:#A3A3A3;
-   font-size: 13px;
+.classBar li a img{
+    display: block;
+    margin: 0 auto;
+    width: 70%;
 }
 
+.copDistance{
+
+    position: absolute;
+    top: 48%;
+    right: 10px;
+
+    color: #b3b3b3;
+
+}
+.copHidden{
+    display: none;
+
+}
+.copShow{
+    display: block;
+}
+.copInfoImg{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.vipContent ,.vipTitle{
+    background-color: #fff;
+}
+.vipTitle{
+    height: 40px;
+    line-height: 40px;
+    padding-left: 20px;
+    font-size: 14px;
+    margin-bottom: 3px;
+
+}
+.vipContent{
+    height: 110px;
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+.copInfos{
+    background-color: #fff;
+ padding-left: 20px;
+ position: relative;
+ margin-bottom: 3px;
+}
+.copInfos h1{
+    font-size: 18px;
+}
+.copInfos .copLocation{
+    display: inline-block;
+    width: 80%;
+    color: #b3b3b3;
+
+font-size: 14px;
+}
+.copInfos .telPhone{
+    font-size: 30px;
+    position: absolute;
+    right: 10px;
+    top: 20px;
+
+}
+.copGuide{
+    background-color: #fff;
+    color: #b3b3b3;
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: 15px;
+    padding-bottom: 20px;
+}
+/*toredo*/
+@media screen and (max-width: 340px) {
+   /* .classBar li{
+         list-style: none;
+    display: inline-block;
+    width: 44%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+        
+    }*/
+}

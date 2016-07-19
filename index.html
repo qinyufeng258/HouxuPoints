@@ -1,6 +1,9 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
+	<title>逅续积分口袋</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style/main.css">
@@ -8,16 +11,11 @@
 	<link rel="stylesheet" href="style/jquery.mobile-1.4.5.css">
 	<link rel="stylesheet" href="style/weui.css">
 	<link rel="stylesheet" href="style/style.css">
-	<!-- <link rel="stylesheet" href="style/jquery-ui/jquery-ui.css"> -->
 	<script src="js/jquery-2.1.4.min.js"></script>
 	<script src="js/jquery.mobile-1.4.5.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/md5.js"></script>
-
-<!-- 	<script src="js/jquery.validate.min.js"></script>
-	<script src="js/messages_zh.js"></script> -->
-
-	<!-- <script src="js/jquery-ui.js"></script> -->
+	<script type="text/javascript" src="js/fastclick.js"></script>
 	<!-- 引入 jQuery Mobile 样式 -->
 	<!-- <link rel="stylesheet" href="http://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css"> -->
 
@@ -36,33 +34,32 @@
 			  		<div class="vip-left">
 			  			<a id="vipCardLink" href="#vipCard" data-transition="slidefade" >
 				  			<h4>会员卡号</h4>
-				  			<p id="vip-card-id">608080091</p>
-				  			
+				  			<p id="vip-card-id">${CARD_NO}</p>
 			  			</a>
 			  		</div>
-			  		<div class="vip-right">
+			  		<!-- <div class="vip-right">
 			  			<a id="myPointLink" href="#myPoint" data-transition="slidefade" >
 				  			<h4>我的积分</h4>
-				  			<p id="vip-card-points">2300</p>
+				  			<p id="vip-card-points">${POINTS}</p>
 				  		</a>
-			  		</div>
+			  		</div> -->
 				</div>		
 	  	</div><!-- 会员卡 end -->
 
 	  	<div class="middle-background">
 	  		<div class="weui_cells weui_cells_access " id="points-add" > 
-			    <a class="weui_cell" href="#pointPay" data-transition="slidefade" >
+			    <a class="weui_cell" href="" data-transition="slidefade" id="my-points" >
 			        <div class="weui_cell_hd">
 			            <img src="images/shop.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
 			        </div>
 			        <div class="weui_cell_bd weui_cell_primary middle-title">
-			            <p>积分充值</p>
+			            <p>我的积分</p>
 			        </div>
 			        <div class="weui_cell_ft">
 			            
 			        </div>
 			    </a>
-			    <a class="weui_cell" href="#pointChange">
+			    <a class="weui_cell" href="javascript:void(0);" onclick="goDuiba()">
 			        <div class="weui_cell_hd">
 			            <img src="images/shop.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
 			        </div>
@@ -73,16 +70,17 @@
 			        </div>
 		   		</a>
 
-		   		<!-- <a class="weui_cell" href="#dailyCheckPage">
+		   		<a class="weui_cell" href="javascript:void(0);" data-transition="slidefade" id="point-parchase">
 			        <div class="weui_cell_hd">
 			            <img src="images/shop.jpg" alt="icon" style="width:20px;margin-right:5px;display:block">
 			        </div>
 			        <div class="weui_cell_bd weui_cell_primary middle-title">
-			            <p>每日签到</p>
+			            <p>积分支付</p>
 			        </div>
-			        <div class="weui_cell_ft">				          
+			        <div class="weui_cell_ft">
+			            
 			        </div>
-		   		</a> -->
+			    </a>
 		   		
 			</div>
 	  	</div><!-- 积分信息 end -->
@@ -114,7 +112,7 @@
 	  	</div><!-- 个人信息 与 合作商户 end -->
 	</div><!-- 首页信息 end -->
 
-	<div data-role="page" id="pointPay" >
+	<!-- <div data-role="page" id="pointPay" >
 		<div class="weui_cells_title">积分充值</div>
 		<div class="weui_cells">
 		    <div class="weui_cell">
@@ -122,19 +120,17 @@
 		            <p>会员卡号</p>
 		        </div>
 		        <div class="weui_cell_ft">
-		            608080091
+		            ${CARD_NO}
 		        </div>
 		    </div>
 		</div>
 
 		<div class="weui_cells weui_cells_form" >
-	        <div class="weui_cell" id="pointNameContainer">
+	        <div class="weui_cell">
 	            <div class="weui_cell_hd" ><label class="weui_label" >积分卡号</label></div>
 	            <div class="weui_cell_bd weui_cell_primary">
 	                <input data-role='none' class="weui_input" type="number" placeholder="请输入积分卡号" id="pointCardName" name="pointCardName"/>
-
 	            </div>
-
 	        </div>	
 	         <div id="errorTipsName"></div>
 	        <div class="weui_cell">
@@ -144,10 +140,17 @@
 	            </div>
 	        </div>
 			<div id="errorTipsPwd"></div>
-	        
+	        <div class="weui_cell" >
+	            <div class="weui_cell_hd"><label class="weui_label">验证码</label></div>
+	            <div class="weui_cell_bd weui_cell_primary" id="identi-Input">
+	                <input data-role='none' class="weui_input" type="text" id="pointCardIden" name="pointCardIden" placeholder="请输入验证码" />
+	                <img id="safecode" src="valicode.images" alt="验证码图片" class="IdenImg" onclick="reloadcode()">
+	            </div>
+	        </div>
+			<div id="errorTipsCode"></div>
    		 </div>
 
-   		 <a href="#"  data-transition="slidefade"  data-direction="reverse" class="weui_btn weui_btn_plain_primary" id="point-pay-btn">支付</a>
+   		 <a href=""  data-transition="slidefade"  data-direction="reverse" class="weui_btn weui_btn_plain_primary" id="point-pay-btn">支付</a>
 
    		 <div class="point-pay-info">
    		 	<p>积分卡充值说明：</p>
@@ -158,13 +161,13 @@
    		 		2. 电脑登录逅续科技官方网站（www.whuahuw.com）可以查询积分卡状态信息，积分卡状态分为未激活，已激活，已使用三种状态。
    		 	</p>
    		 </div>
-	</div><!-- 积分充值 end -->
+	</div> --><!-- 积分充值 end -->
 
 	<div data-role="page" id="vipCard" >
 		<div class="upbackground">
 			<div class="weui_cells_title">会员卡号</div>
 			
-				<p class="vipCodeNum">608080091</p>
+				<p class="vipCodeNum">${CARD_NO}</p>
 				
 				<img src="images/vipCode.jpg" alt="会员卡条形码" class="vipCodePic">
 			
@@ -190,28 +193,41 @@
 	</div><!-- 会员卡号 end -->
 
 	<div data-role="page" id="myPoint" >
-		<div class="weui_cells_title">我的积分</div>
 		<div class="upbackground">
-		<article class="weui_article">
-			<div>
-			    <h2>当前积分：</h2>
-				<h1>2300</h1>
-			</div>
-		    <section>
-		        <h2 class="title"></h2>
-		        <section>
-		            <img src="images/vipCode.jpg" alt="付款条形码">
-		        </section>
-		    </section>
-
-		</article>
+			<span class="up-title">我的积分</span>
+			<p class="up-point">${POINTS}分</p>
 		</div>
-		<div class="point-pay-info">
+		<div class="point-use">
+			<span class="use-time">2016-06-18 14:21</span>
+			<span class="use-shop">沙县小吃北京立军店 消费</span>
+			<span class="use-point">+ 15 积分</span>
+		</div>
+			<div class="point-use">
+			<span class="use-time">2016-06-18 14:21</span>
+			<span class="use-shop">沙县小吃北京立军店 消费</span>
+			<span class="use-point">+ 15 积分</span>
+		</div>
+			<div class="point-use">
+			<span class="use-time">2016-06-18 14:21</span>
+			<span class="use-shop">沙县小吃北京立军店 消费</span>
+			<span class="use-point">+ 15 积分</span>
+		</div>
+			<div class="point-use">
+			<span class="use-time">2016-06-18 14:21</span>
+			<span class="use-shop">沙县小吃北京立军店 消费</span>
+			<span class="use-point">+ 15 积分</span>
+		</div>
+			<div class="point-use">
+			<span class="use-time">2016-06-18 14:21</span>
+			<span class="use-shop">沙县小吃北京立军店 消费</span>
+			<span class="use-point">+ 15 积分</span>
+		</div>
+		<!-- <div class="point-pay-info">
 			<p>积分说明：</p>
-			<p>1.积分可以在部分合作商户实体店抵现使用，抵现比例为1积分=1元;</p>
+			<p>1.积分可以在部分合作商户实体店抵现使用，抵现比例为100积分=1元;</p>
 			<p>2.逅续公司有权对积分用途，使用规则和抵现比例做适当调整；</p>
 			<p>3.会员积分以自然年度为单位，有限期为1年，每自然年3月份最后一天，自动清零上一年度未使用的剩余积分。</p>
-		</div>
+		</div> -->
 	</div><!-- 会员积分 end -->
 
 	<div data-role="page" id="pointChange" >
@@ -228,7 +244,7 @@
 			
 			<div class="currentPoint">
 				<h2>当前积分：</h2>
-				<h1>2300</h1>
+				<h1>${POINTS}</h1>
 			</div>
 			<a  href="#myChange" id="myChangeBtn">
 				<img src="images/shop.jpg" alt="icon">兑换记录
@@ -688,10 +704,10 @@
 			<div class="weui_cell">
 	            <div class="weui_cell_hd"><label for="" class="weui_label">手机</label></div>
 	            <div class="weui_cell_bd weui_cell_primary">
-	                <input class="weui_input" data-role='none' type="number" id="person-tel" pattern="[0-9]*" placeholder="请输入号码" value=""/>
+	                <input class="weui_input" data-role='none' type="number" id="person-tel"  placeholder="请输入号码" value=""/>
 	            </div>
         	</div>
-			
+			<div id="errorTipsTel"></div>
 			
 			<div class="weui_cell weui_cell_select weui_select_after">
 	           <div class="weui_cell_hd"><label for="" class="weui_label">身份</label></div>
@@ -723,18 +739,25 @@
 
 	<div data-role="page" id="copBusiness" >
 		<div class="weui_cells_title">合作商户</div>
-
-		<div class="copTable">
+		<div class="classBar">
+			<ul>
+				<li><a href="" class="classIcons" id="classFood"><img src="images/classIcon1.png" alt="">餐饮</a></li>
+				<li><a href="" class="classIcons" id="classMarket"><img src="images/classIcon2.png" alt="">商城</a></li>
+				<li><a href="" class="classIcons" id="classBeauty"><img src="images/classIcon3.png" alt="">丽人</a></li>
+				<li><a href="" class="classIcons" id="classSport"><img src="images/classIcon4.png" alt="">运动</a></li>
+			</ul>
+		</div>
+		<div class="copTable" id="copFood">
 			<div class="copTableItem">
 				<div class="copContainer">
 					<img src="images/cop01.jpg" alt="合作商户商标">
 					<div class="copInfo">
-						<h1>南方商城店</h1>
-						<span>古坊路76弄南方休闲广场2楼【拨打时间：11：30-14：00】</span>
+						<h1>绝味鸭脖店</h1>
+						<span>会员折扣</span>
 					</div>
-					<span class="icon-circle-right rightBtn"></span>
+					<span class="copDistance">6.4km</span>
 				</div>
-				<table class="copBtnTable" >
+				<!-- <table class="copBtnTable" >
 					<tr>
 						<td>
 							<span class="icon-phone"></span>
@@ -746,43 +769,19 @@
 							<a href="http://apis.map.qq.com/uri/v1/search?keyword=南方商城店&region=北京&referer=myapp">导航</a>	
 						</td>
 					</tr>
-				</table>
+				</table> -->
 			</div>
 			
 			<div class="copTableItem">
 				<div class="copContainer">
 					<img src="images/cop01.jpg" alt="合作商户商标">
 					<div class="copInfo">
-						<h1>南方商城店</h1>
-						<span>古坊路76弄南方休闲广场2楼【拨打时间：11：30-14：00】</span>
+						<h1>麦当劳店</h1>
+						<span>会员折扣</span>
 					</div>
-					<span class="icon-circle-right rightBtn"></span>
+					<span class="copDistance">6.4km</span>
 				</div>
-				<table class="copBtnTable" >
-					<tr>
-						<td>
-							<span class="icon-phone"></span>
-							<a href="tel:10086">预定</a>	
-						</td>
-						
-						<td>
-							<span class="icon-compass"></span>
-							<a href="http://apis.map.qq.com/uri/v1/search?keyword=南方商城店&region=北京&referer=myapp">导航</a>	
-						</td>
-						
-					</tr>
-				</table>
-			</div>
-			<div class="copTableItem">
-				<div class="copContainer">
-					<img src="images/cop01.jpg" alt="合作商户商标">
-					<div class="copInfo">
-						<h1>南方商城店</h1>
-						<span>古坊路76弄南方休闲广场2楼【拨打时间：11：30-14：00】</span>
-					</div>
-					<span class="icon-circle-right rightBtn"></span>
-				</div>
-				<table class="copBtnTable" >
+				<!-- <table class="copBtnTable" >
 					<tr>
 						<td>
 							<span class="icon-phone"></span>
@@ -794,64 +793,236 @@
 							<a href="http://apis.map.qq.com/uri/v1/search?keyword=南方商城店&region=北京&referer=myapp">导航</a>	
 						</td>
 					</tr>
-				</table>
-			</div>
-			<div class="copTableItem">
-				<div class="copContainer">
-					<img src="images/cop01.jpg" alt="合作商户商标">
-					<div class="copInfo">
-						<h1>南方商城店</h1>
-						<span>古坊路76弄南方休闲广场2楼【拨打时间：11：30-14：00】</span>
-					</div>
-					<span class="icon-circle-right rightBtn"></span>
-				</div>
-				<table class="copBtnTable" >
-					<tr>
-						<td>
-							<span class="icon-phone"></span>
-							<a href="tel:10086">预定</a>	
-						</td>
-						
-						<td>
-							<span class="icon-compass"></span>
-							<a href="http://apis.map.qq.com/uri/v1/search?keyword=南方商城店&region=北京&referer=myapp">导航</a>	
-						</td>
-						
-					</tr>
-				</table>
-			</div>
-			<div class="copTableItem">
-				<div class="copContainer">
-					<img src="images/cop01.jpg" alt="合作商户商标">
-					<div class="copInfo">
-						<h1>南方商城店</h1>
-						<span>古坊路76弄南方休闲广场2楼【拨打时间：11：30-14：00】</span>
-					</div>
-					<span class="icon-circle-right rightBtn"></span>
-				</div>
-				<table class="copBtnTable" >
-					<tr>
-						<td>
-							<span class="icon-phone"></span>
-							<a href="tel:10086">预定</a>	
-						</td>
-
-						<td>
-							<span class="icon-compass"></span>
-							<a href="http://apis.map.qq.com/uri/v1/search?keyword=南方商城店&region=北京&referer=myapp">导航</a>	
-						</td>
-
-						
-					</tr>
-				</table>
+				</table> -->
 			</div>
 		
-
+			
 		
 			
 		</div>
-	</div><!-- 合作商户 end -->
 
+		<div class="copTable" id="copMarket">
+			<div class="copTableItem">
+				<div class="copContainer">
+					<img src="images/cop01.jpg" alt="合作商户商标">
+					<div class="copInfo">
+						<h1>南方商城店</h1>
+						<span>会员折扣</span>
+					</div>
+					<span class="copDistance">6.4km</span>
+				</div>
+				<!-- <table class="copBtnTable" >
+					<tr>
+						<td>
+							<span class="icon-phone"></span>
+							<a href="tel:10086">预定</a>	
+						</td>
+
+						<td>
+							<span class="icon-compass"></span>
+							<a href="http://apis.map.qq.com/uri/v1/search?keyword=南方商城店&region=北京&referer=myapp">导航</a>	
+						</td>
+					</tr>
+				</table> -->
+			</div>
+			
+			<div class="copTableItem">
+				<div class="copContainer">
+					<img src="images/cop01.jpg" alt="合作商户商标">
+					<div class="copInfo">
+						<h1>南方商城店</h1>
+						<span>会员折扣</span>
+					</div>
+					<span class="copDistance">6.4km</span>
+				</div>
+				<!-- <table class="copBtnTable" >
+					<tr>
+						<td>
+							<span class="icon-phone"></span>
+							<a href="tel:10086">预定</a>	
+						</td>
+
+						<td>
+							<span class="icon-compass"></span>
+							<a href="http://apis.map.qq.com/uri/v1/search?keyword=南方商城店&region=北京&referer=myapp">导航</a>	
+						</td>
+					</tr>
+				</table> -->
+			</div>
+		
+			<div class="copTableItem">
+				<div class="copContainer">
+					<img src="images/cop01.jpg" alt="合作商户商标">
+					<div class="copInfo">
+						<h1>北方商城店</h1>
+						<span>会员折扣 积分支付 会员积分</span>
+					</div>
+					<span class="copDistance">7.9km</span>
+				</div>
+				
+			</div>
+		
+			
+		</div>
+
+		<div class="copTable" id="copBeauty">
+			<div class="copTableItem">
+				<div class="copContainer">
+					<img src="images/cop01.jpg" alt="合作商户商标">
+					<div class="copInfo">
+						<h1>东方美容院</h1>
+						<span>会员折扣</span>
+					</div>
+					<span class="copDistance">6.4km</span>
+				</div>
+				<!-- <table class="copBtnTable" >
+					<tr>
+						<td>
+							<span class="icon-phone"></span>
+							<a href="tel:10086">预定</a>	
+						</td>
+
+						<td>
+							<span class="icon-compass"></span>
+							<a href="http://apis.map.qq.com/uri/v1/search?keyword=南方商城店&region=北京&referer=myapp">导航</a>	
+						</td>
+					</tr>
+				</table> -->
+			</div>
+			
+			<div class="copTableItem">
+				<div class="copContainer">
+					<img src="images/cop01.jpg" alt="合作商户商标">
+					<div class="copInfo">
+						<h1>南方商城店</h1>
+						<span>会员折扣</span>
+					</div>
+					<span class="copDistance">6.4km</span>
+				</div>
+				<!-- <table class="copBtnTable" >
+					<tr>
+						<td>
+							<span class="icon-phone"></span>
+							<a href="tel:10086">预定</a>	
+						</td>
+
+						<td>
+							<span class="icon-compass"></span>
+							<a href="http://apis.map.qq.com/uri/v1/search?keyword=南方商城店&region=北京&referer=myapp">导航</a>	
+						</td>
+					</tr>
+				</table> -->
+			</div>
+		
+			<div class="copTableItem">
+				<div class="copContainer">
+					<img src="images/cop01.jpg" alt="合作商户商标">
+					<div class="copInfo">
+						<h1>北方商城店</h1>
+						<span>会员折扣 积分支付 会员积分</span>
+					</div>
+					<span class="copDistance">7.9km</span>
+				</div>
+				
+			</div>
+		
+			
+		</div>
+
+
+		<div class="copTable" id="copSport">
+			<div class="copTableItem">
+				<div class="copContainer">
+					<img src="images/cop01.jpg" alt="合作商户商标">
+					<div class="copInfo">
+						<h1>南方商城店</h1>
+						<span>会员折扣</span>
+					</div>
+					<span class="copDistance">6.4km</span>
+				</div>
+				<!-- <table class="copBtnTable" >
+					<tr>
+						<td>
+							<span class="icon-phone"></span>
+							<a href="tel:10086">预定</a>	
+						</td>
+
+						<td>
+							<span class="icon-compass"></span>
+							<a href="http://apis.map.qq.com/uri/v1/search?keyword=南方商城店&region=北京&referer=myapp">导航</a>	
+						</td>
+					</tr>
+				</table> -->
+			</div>
+			
+			<div class="copTableItem">
+				<div class="copContainer">
+					<img src="images/cop01.jpg" alt="合作商户商标">
+					<div class="copInfo">
+						<h1>南方商城店</h1>
+						<span>会员折扣</span>
+					</div>
+					<span class="copDistance">6.4km</span>
+				</div>
+				<!-- <table class="copBtnTable" >
+					<tr>
+						<td>
+							<span class="icon-phone"></span>
+							<a href="tel:10086">预定</a>	
+						</td>
+
+						<td>
+							<span class="icon-compass"></span>
+							<a href="http://apis.map.qq.com/uri/v1/search?keyword=南方商城店&region=北京&referer=myapp">导航</a>	
+						</td>
+					</tr>
+				</table> -->
+			</div>
+		
+			<div class="copTableItem">
+				<div class="copContainer">
+					<img src="images/cop01.jpg" alt="合作商户商标">
+					<div class="copInfo">
+						<h1>北方商城店</h1>
+						<span>会员折扣 积分支付 会员积分</span>
+					</div>
+					<span class="copDistance">7.9km</span>
+				</div>
+				
+			</div>
+		
+			
+		</div>
+
+
+
+	</div><!-- 合作商户 end -->
+	<div data-role="page" id="copInfos" >
+		<img src="images/copBg.jpg" alt="" class="copInfoImg">
+		<div class="vipTitle">
+			逅续VIP 可享
+		</div>
+		<div class="vipContent">
+			会员折扣：结账时出示会员卡，可享商家指定折扣。<br/>
+			会员积分：结账时出示会员卡，可获得商家指定比例返利的积分。<br/>
+			积分支付：在支持积分支付的商家，消费可使用积分抵现。（积分抵现比例和是否与店内其他优惠同享以商家规定为准）<br/>
+			
+		</div>
+		<div class="copInfos">
+			<h1 id="copName">北方商城店</h1>
+			<a class="copLocation" href="http://apis.map.qq.com/uri/v1/search?keyword=北京市海淀区学清路甲8号商业广场2号楼2楼&region=北京&referer=myapp">北京市海淀区学清路甲8号商业广场2号楼2楼（近美廉美附近）</a>
+			
+			<a href="tel:10086" class="icon-phone telPhone"></a>
+		</div>
+		
+		<div class="copGuide">
+			地道四川风味火锅，味道一级棒，装潢精致，适合朋友小聚，使用逅续积分支付再送大可乐一瓶！<br/>
+			酒水不可使用逅续积分支付<br/>
+			不与本店同期其他活动同时使用
+
+		</div>
+							
+	</div><!-- 合作商户详情页 end -->
 	<div data-role="page" id="changeDesc" >
 		<img src="images/change04.jpg" alt="礼品图片" id="goodImg">
 
@@ -889,6 +1060,28 @@
 	    </div>
 	</div><!-- 兑换记录 弹出窗口 end -->
 
+	<div class="weui_dialog_alert" id="alertWindow2">
+	    <div class="weui_mask"></div>
+	    <div class="weui_dialog">
+	        <div class="weui_dialog_hd"><strong class="weui_dialog_title" id="alertTitle2">提示</strong></div>
+	        <div class="weui_dialog_bd" id="alertContent2"></div>
+	        <div class="weui_dialog_ft">
+	            <a href="#myPoint" class="weui_btn_dialog primary">我知道了</a>
+	        </div>
+	    </div>
+	</div><!-- 兑换记录 弹出窗口 end -->
+
+	<div class="weui_dialog_alert" id="alertWindow3">
+	    <div class="weui_mask"></div>
+	    <div class="weui_dialog">
+	        <div class="weui_dialog_hd"><strong class="weui_dialog_title" id="alertTitle3">提示</strong></div>
+	        <div class="weui_dialog_bd" id="alertContent3"></div>
+	        <div class="weui_dialog_ft">
+	            <a href="" class="weui_btn_dialog primary">我知道了</a>
+	        </div>
+	    </div>
+	</div><!-- 兑换记录 弹出窗口 end -->
+
 	<div class="weui_dialog_alert" id="alertWindowChange">
 	    <div class="weui_mask"></div>
 	    <div class="weui_dialog">
@@ -912,7 +1105,7 @@
 	    </div>
 	    <div class="weui_opr_area">
 	        <p class="weui_btn_area">
-	            <a href="javascript:;" class="weui_btn weui_btn_primary" id="backToHome">确定</a>
+	            <a href="" class="weui_btn weui_btn_primary" id="backToHome">确定</a>
 	           
 	        </p>
 	    </div>
@@ -929,7 +1122,7 @@
 	    </div>
 	    <div class="weui_opr_area">
 	        <p class="weui_btn_area">
-	            <a href="javascript:;" class="weui_btn weui_btn_primary" id="backToHome2">确定</a>
+	            <a href="" class="weui_btn weui_btn_primary" id="backToHome2">确定</a>
 	           
 	        </p>
 	    </div>
@@ -937,14 +1130,6 @@
 	      
 	    </div>
 	</div>
-
-	<!-- <div data-role="page" class="weui_msg" id="dailyCheckPage">
-		<div class="weui_cells_title " id="dailyTitle">逅续积分计划签到活动<span id="titleMonth">5</span>月份</div>
-		<div id="calendar"></div>
-
-
-	</div>
- -->
 
 </body>
 	
